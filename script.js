@@ -5,7 +5,7 @@ const recipes = [
     title: "Piranda Thokku",
     category: "South Indian",
     // image: "https://ibb.co/hFPsYvKR",
-    image: "https://i.ibb.co/kVh3MRnN/PIRANDAI-THOKKU.png",
+    image: "/PIRANDAI-THOKKU.png",
     description: "Traditional Tamil sambar with fresh drumstick and brinjal",
     ingredients: ["Toor dal 1 cup", "Drumstick 2", "Brinjal 4 small", "Tamarind extract", "Sambar powder 3 tbsp", "Mustard seeds", "Curry leaves"],
     steps: [
@@ -22,7 +22,7 @@ const recipes = [
     id: 2,
     title: "Idli Podi",
     category: "South Indian",
-    image: "https://i.ibb.co/fzf2f7sw/Curry-leaves-idli-podi-1.png",
+    image: "/Curry-leaves-idli-podi-1.png",
     description: "Spicy pepper rasam made with organic tomatoes",
     ingredients: ["Tomatoes 3", "Tamarind small lemon size", "Pepper 2 tsp", "Cumin 1 tsp", "Garlic 3 cloves", "Curry leaves", "Coriander leaves"],
     steps: [
