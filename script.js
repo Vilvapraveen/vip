@@ -4,7 +4,7 @@ const recipes = [
     id: 1,
     title: "Piranda Thokku",
     category: "South Indian",
-    image: "https://www.youtube.com/watch?v=s80e-UmMt1M",
+    image: "https://i.ytimg.com/vi/s80e-UmMt1M/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBJvXrbXC4oV1_W2G2UI1aP8jExvQ",
     description: "Traditional Tamil sambar with fresh drumstick and brinjal",
     ingredients: ["Toor dal 1 cup", "Drumstick 2", "Brinjal 4 small", "Tamarind extract", "Sambar powder 3 tbsp", "Mustard seeds", "Curry leaves"],
     steps: [
@@ -38,7 +38,7 @@ const recipes = [
     id: 3,
     title: "Karuppu ulunthu Etli Podi",
     category: "Tamil Special",
-    image: "https://tamil.indianexpress.com/lifestyle/karuppu-ulundhu-idli-podi-recipe-in-tamil-4478084",
+    image: "https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/indian-express-tamil/media/media_files/LrBYq8Tch75ooqpsi4Bm.jpg",
     description: "Vellai kuzhambu with tender coconut & garlic",
     ingredients: ["Tender coconut 1 cup", "Garlic 10 cloves", "Black pepper 1 tbsp", "Cumin seeds 1 tsp", "Coconut milk", "Curry leaves"],
     steps: [
@@ -55,7 +55,7 @@ const recipes = [
     id: 4,
     title: "Ellu Podi",
     category: "Side Dish",
-    image: "https://www.dmtraders.com/product/ellu-podi/?srsltid=AfmBOooSuzzEBR2iqcA243TidziHBzJyUoXudJ_sZZQgSmxLruWs3Pp4",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOFZnu6TJZ_7ATeuZGji5sN2p0lnjRERuryA&s",
     description: "Cabbage poriyal - simple yet delicious side",
     ingredients: ["Cabbage 1 medium", "Mustard seeds", "Urad dal", "Red chili 2", "Coconut grated 1/4 cup", "Curry leaves"],
     steps: [
@@ -72,7 +72,7 @@ const recipes = [
     id: 5,
     title: "Vllarai Podi",
     category: "Dessert",
-    image: "https://www.podhigaiherbs.com/products/vallarai-podi-brahmi-leaves-powder/1658361000000069987?srsltid=AfmBOoqlSU7GqqanIJJzzaX4pUHQw5cau5SL7UJ6Tht1sgTePnnRjUk-",
+    image: "https://in.gramango.com/uploads/products/1650698310vpg.jpg",
     description: "Paal payasam made with organic milk",
     ingredients: ["Milk 1L", "Sago 1/2 cup", "Sugar 1 cup", "Cardamom 4", "Cashews & raisins"],
     steps: [
