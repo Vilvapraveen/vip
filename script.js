@@ -350,7 +350,7 @@ function renderProducts(container, productList) {
       <div class="p-6 flex-0">
         <h4 class="text-2xl font-bold text-gray-900 mb-3">${product.name}</h4>
         <p class="text-gray-600 mb-6 flex-1">${product.description}</p>
-        <a href="https://wa.me/919600572691?text=Hi!%20I%20want%20to%20order%20${product.name.replace(/\\(.*\\)/, '')}" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-6 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-[1.02] transition-all block text-center">
+        <a href="https://wa.me/919600572691?text=Hi!%20I%20want%20to%20order%20${product.name.replace(/\(.*\)/, '')}" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-6 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-[1.02] transition-all block text-center">
           Order on WhatsApp 📱
         </a>
       </div>
