@@ -5,34 +5,67 @@ const recipes = [
     title: "Piranda Thokku",
     category: "South Indian",
     image: "https://i.ytimg.com/vi/s80e-UmMt1M/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBJvXrbXC4oV1_W2G2UI1aP8jExvQ",
-    description: "Traditional Tamil sambar with fresh drumstick and brinjal",
-    ingredients: ["Toor dal 1 cup", "Drumstick 2", "Brinjal 4 small", "Tamarind extract", "Sambar powder 3 tbsp", "Mustard seeds", "Curry leaves"],
+    description: "Pirandai Thokku – பாரம்பரிய தமிழ் சைடு டிஷ், பிரண்டை கொண்டு செய்யப்பட்ட சுவையான மற்றும் ஆரோக்கியமான தொக்கு; சாதம், இட்லி, தோசைக்கு perfect combo. 👍",
+    ingredients: ["பிரண்டை (Pirandai) – 1 cup (சுத்தம் செய்து நறுக்கப்பட்டது)","எண்ணெய் – 2 tbsp", "புளி – சிறிய எலுமிச்சை அளவ", "உலர்ந்த மிளகாய் – 4–6", "பூண்டு – 5 பல்", "கடுகு – 1 tsp", "உளுத்தம் பருப்பு – 1 tsp", "பெருங்காயம் – சிட்டிக","மஞ்சள் தூள் – ¼ tsp","உப்பு – தேவைக்க"],
+
     steps: [
-      "1. Pressure cook toor dal with turmeric until soft",
-      "2. Extract tamarind juice and boil with veggies",
-      "3. Add sambar powder and cooked dal, boil well",
-      "4. Temper with mustard, urad dal, red chili & curry leaves"
+      "1. பிரண்டை தயார் செய்யவும்",
+      "2.வறுக்கவும்",
+      "3. அரைக்கவும்",
+      "4. தாளிக்கவும் & கிளறவும்"
     ],
-    tips: "Use homemade sambar powder for authentic taste. Adjust spice as per preference.",
-    prepTime: "15 mins",
-    cookTime: "25 mins"
+  tips: "Cook pirandai well to reduce bitterness. Use enough oil for better taste and longer shelf life.",
+  prepTime: "10 mins",
+  cookTime: "20 mins"
+
   },
+title: "Idli Podi",
+category: "South Indian",
+image: "https://source.unsplash.com/300x300/?idli",
+description: "Idli Podi – காரமான மற்றும் நறுமணமுள்ள தென்னிந்திய பொடி; இட்லி, தோசைக்கு சிறந்த சைடு டிஷ்.",
+ingredients: [
+  "உலர்ந்த மிளகாய் – 10-12",
+  "கடலை பருப்பு – 2 tbsp",
+  "உளுத்தம் பருப்பு – 2 tbsp",
+  "எள்ளு – 1 tbsp",
+  "பூண்டு – 4 பல்",
+  "பெருங்காயம் – சிட்டிகை",
+  "உப்பு – தேவைக்கு"
+],
+steps: [
+  "1. மிளகாய், கடலை பருப்பு, உளுத்தம் பருப்பை தனித்தனியாக வறுக்கவும்",
+  "2. எள்ளை தனியாக லேசாக வறுக்கவும்",
+  "3. அனைத்தையும் குளிர வைத்து, பூண்டு, உப்பு, பெருங்காயம் சேர்த்து அரைக்கவும்",
+  "4. காற்று புகாத டப்பாவில் சேமித்து, இட்லி/தோசையுடன் பரிமாறவும்"
+],
+tips: "Roast ingredients well for rich flavor. Add sesame oil while serving for best taste.",
+prepTime: "10 mins",
+cookTime: "10 mins"
+
   {
     id: 2,
-    title: "Idli Podi",
-    category: "South Indian",
-    image: "https://rakskitchen.net/idli-milagai-podi-recipe-how-to-make-idli-podi/",
-    description: "Spicy pepper rasam made with organic tomatoes",
-    ingredients: ["Tomatoes 3", "Tamarind small lemon size", "Pepper 2 tsp", "Cumin 1 tsp", "Garlic 3 cloves", "Curry leaves", "Coriander leaves"],
-    steps: [
-      "1. Crush pepper, cumin & garlic together",
-      "2. Boil tomatoes & tamarind, extract juice",
-      "3. Add spice mix & boil till frothy",
-      "4. Temper with ghee, mustard & curry leaves"
-    ],
-    tips: "Perfect for cold evenings. Serve hot with rice.",
+      title: "Idli Podi",
+category: "South Indian",
+image: "https://rakskitchen.net/idli-milagai-podi-recipe-how-to-make-idli-podi",
+description: "Idli Podi – காரமான மற்றும் நறுமணமுள்ள தென்னிந்திய பொடி; இட்லி, தோசைக்கு சிறந்த சைடு டிஷ்.",
+ingredients: [
+  "உலர்ந்த மிளகாய் – 10-12",
+  "கடலை பருப்பு – 2 tbsp",
+  "உளுத்தம் பருப்பு – 2 tbsp",
+  "எள்ளு – 1 tbsp",
+  "பூண்டு – 4 பல்",
+  "பெருங்காயம் – சிட்டிகை",
+  "உப்பு – தேவைக்கு"
+],
+  steps: [
+    "1. மிளகாய், கடலை பருப்பு, உளுத்தம் பருப்பை தனித்தனியாக வறுக்கவும்",
+    "2. எள்ளை தனியாக லேசாக வறுக்கவும்",
+    "3. அனைத்தையும் குளிர வைத்து, பூண்டு, உப்பு, பெருங்காயம் சேர்த்து அரைக்கவும்",
+    "4. காற்று புகாத டப்பாவில் சேமித்து, இட்லி/தோசையுடன் பரிமாறவும்"
+  ],
+    tips: "Roast ingredients well for rich flavor. Add sesame oil while serving for best taste.",
     prepTime: "10 mins",
-    cookTime: "15 mins"
+    cookTime: "10 mins"
   },
   {
     id: 3,
