@@ -138,37 +138,37 @@ ingredients: [
 const products = [
   {
     id: 1,
-    name: "Daily Thali (Serves 2)",
+    name: "Piranda thokku (Serves 2)",
     price: "₹350",
-    image: "https://images.unsplash.com/photo-1559314809-0f31657ffb66?w=400&h=300&fit=crop",
+    image: "https://i.ytimg.com/vi/s80e-UmMt1M/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBJvXrbXC4oV1_W2G2UI1aP8jExvQ",
     description: "Complete meal with 4 curries, rice, rasam, sambar, appalam"
   },
   {
     id: 2,
-    name: "Sambar Rice Pack",
+    name: "Idly Podi",
     price: "₹180",
-    image: "https://images.unsplash.com/photo-1684076918137-7b6c65556df7?w=400&h=300&fit=crop",
+    image: "https://rakskitchen.net/idli-milagai-podi-recipe-how-to-make-idli-podi",
     description: "2 servings of piping hot sambar rice with pickle"
   },
   {
     id: 3,
-    name: "Mixed Biryani Combo",
+    name: "Karuppu ulunthu Etli Podi",
     price: "₹450",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
+    image: "https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/indian-express-tamil/media/media_files/LrBYq8Tch75ooqpsi4Bm.jpg",
     description: "Chicken + Veg biryani (2 servings) with raita & salna"
   },
   {
     id: 4,
-    name: "South Indian Breakfast",
+    name: "Ellu Podi",
     price: "₹250",
-    image: "https://images.unsplash.com/photo-1621996346565-e3dbc353d2db?w=400&h=300&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOFZnu6TJZ_7ATeuZGji5sN2p0lnjRERuryA&s",
     description: "Idli (8) + Vada (4) + Chutneys + Sambar"
   },
   {
     id: 5,
-    name: "Fresh Curd Rice",
+    name: "Vallarai Podi",
     price: "₹120",
-    image: "https://images.unsplash.com/photo-1567306301408-9b74779a11af?w=400&h=300&fit=crop",
+    image: "https://in.gramango.com/uploads/products/1650698310vpg.jpg",
     description: "2 servings of cooling curd rice with pickle & pomegranate"
   },
   {
