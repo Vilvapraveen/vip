@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaya's Organic - Authentic Tamil Homemade Food</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#fef7ee',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+            organic: {
+              green: '#10b981',
+              gold: '#f59e0b',
+            }
+          },
+          fontFamily: {
+            'tamil': ['"Noto Sans Tamil"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-orange-50 to-amber-50 min-h-screen font-sans">
+
+  <!-- Sticky Header -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-lg border-b border-amber-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 bg-gradient-to-r from-organic-green to-primary-500 rounded-2xl flex items-center justify-center shadow-lg">
+            <span class="text-white font-bold text-xl">🍲</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-600 to-organic-green bg-clip-text text-transparent font-tamil">Jaya's Organic</h1>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#recipes" class="text-lg font-medium text-gray-700 hover:text-primary-600 transition-colors duration-300">Recipes</a>
+          <a href="#products" class="text-lg font-medium text-gray-700 hover:text-primary-600 transition-colors duration-300">Products</a>
+          <a href="#contact" class="text-lg font-medium text-gray-700 hover:text-primary-600 transition-colors duration-300">Contact</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-amber-50 transition-colors">
+            <span class="hamburger-icon"></span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-amber-100">
+        <a href="#recipes" class="block py-2 text-lg font-medium text-gray-700 hover:text-primary-600">Recipes</a>
+        <a href="#products" class="block py-2 text-lg font-medium text-gray-700 hover:text-primary-600">Products</a>
+        <a href="#contact" class="block py-2 text-lg font-medium text-gray-700 hover:text-primary-600">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-400 via-orange-400 to-amber-500 text-white overflow-hidden relative">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(255,255,255,0.1),transparent)] opacity-75 animate-pulse-slow"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-5xl md:text-7xl font-bold font-tamil mb-6 leading-tight animate-float-in">
+        Authentic Tamil<br><span class="text-primary-50">Homemade Food</span>
+      </h2>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 animate-slide-up-delay">
+        Fresh, organic ingredients straight from Chennai kitchens. Taste tradition in every bite.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up-delay-2">
+        <a href="#recipes" class="bg-white text-primary-600 px-10 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 flex items-center space-x-3">
+          <span>Explore Recipes</span> <span>🍛</span>
+        </a>
+        <a href="#products" class="border-2 border-white text-white px-10 py-4 rounded-2xl font-semibold text-lg hover:bg-white hover:text-primary-600 transition-all duration-500">
+          Order Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Filter & Recipe Search -->
+  <section id="recipes" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <h3 class="text-4xl md:text-5xl font-bold font-tamil mb-6 bg-gradient-to-r from-primary-600 to-organic-green bg-clip-text text-transparent">
+        Our Recipes
+      </h3>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Authentic Tamil recipes made with love and fresh organic ingredients.
+      </p>
+    </div>
+
+    <!-- Search & Filters -->
+    <div class="flex flex-col lg:flex-row gap-6 mb-12 max-w-4xl mx-auto">
+      <input 
+        type="text" 
+        id="recipe-search" 
+        placeholder="Search recipes by name or ingredient..." 
+        class="flex-1 px-6 py-4 border-2 border-gray-200 rounded-2xl text-lg focus:border-primary-500 focus:outline-none transition-all shadow-lg hover:shadow-xl"
+      >
+      <div id="category-filters" class="flex flex-wrap gap-3">
+        <button class="filter-chip px-6 py-3 bg-white border-2 border-gray-200 rounded-full font-medium text-gray-700 hover:border-primary-500 hover:bg-primary-50 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="all">
+          All
+        </button>
+        <!-- Dynamic filters will be populated by JS -->
+      </div>
+    </div>
+
+    <!-- Recipe Grid -->
+    <div id="recipe-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Recipes populated by JS -->
+    </div>
+  </section>
+
+  <!-- Recipe Detail Modal -->
+  <div id="recipe-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden animate-fade-in">
+    <div class="max-w-4xl mx-auto p-8 mt-20 max-h-[90vh] overflow-y-auto">
+      <div class="bg-white rounded-3xl shadow-2xl relative animate-slide-up-modal">
+        <button id="close-modal" class="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-3xl shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition-transform z-10">&amp;times;</button>
+        <div id="modal-content" class="p-12"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Products Section -->
+  <section id="products" class="py-24 bg-gradient-to-b from-amber-50 to-orange-50 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center mb-20">
+      <h3 class="text-4xl md:text-5xl font-bold font-tamil mb-6 bg-gradient-to-r from-organic-green to-primary-600 bg-clip-text text-transparent">
+        Ready-to-Eat Products
+      </h3>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Freshly made, preservative-free. Order via WhatsApp for same-day delivery in Chennai.
+      </p>
+    </div>
+    <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Products populated by JS -->
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="bg-white rounded-3xl shadow-2xl p-12 text-center">
+      <h3 class="text-4xl md:text-5xl font-bold font-tamil mb-6 bg-gradient-to-r from-primary-600 to-organic-green bg-clip-text text-transparent">
+        Get in Touch
+      </h3>
+      <p class="text-xl text-gray-600 mb-12">
+        Have questions or ready to place a bulk order? We'd love to hear from you!
+      </p>
+      <form id="contact-form" class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div>
+          <input type="text" name="name" placeholder="Your Name" class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl text-lg focus:border-primary-500 focus:outline-none transition-all shadow-lg hover:shadow-xl" required>
+        </div>
+        <div>
+          <input type="tel" name="phone" placeholder="Phone Number" class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl text-lg focus:border-primary-500 focus:outline-none transition-all shadow-lg hover:shadow-xl" required>
+        </div>
+        <div class="md:col-span-2">
+          <textarea name="message" rows="5" placeholder="Your Message" class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl text-lg focus:border-primary-500 focus:outline-none transition-all resize-vertical shadow-lg hover:shadow-xl"></textarea>
+        </div>
+        <div class="md:col-span-2">
+          <button type="submit" class="w-full bg-gradient-to-r from-primary-500 to-organic-green text-white px-10 py-6 rounded-2xl font-semibold text-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-500">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-primary-700 to-organic-green text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex justify-center items-center space-x-6 mb-6">
+        <a href="https://wa.me/919994709156?text=Hi%20Jaya's%20Organic!" class="w-16 h-16 bg-white/20 hover:bg-white/30 rounded-2xl flex items-center justify-center text-2xl transition-all duration-300 hover:scale-110">📱</a>
+        <a href="https://maps.app.goo.gl/5TdKRkM8AtprjDK49" class="w-16 h-16 bg-white/20 hover:bg-white/30 rounded-2xl flex items-center justify-center text-xl transition-all duration-300 hover:scale-110">📍</a>
+      </div>
+      <p class="text-lg opacity-90">&amp;copy; 2024 Jaya's Organic. Made with <span class="text-2xl">❤️</span> in Chennai.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
