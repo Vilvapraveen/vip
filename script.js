@@ -72,51 +72,66 @@ ingredients: [
     title: "Karuppu ulunthu Etli Podi",
     category: "Tamil Special",
     image: "https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/indian-express-tamil/media/media_files/LrBYq8Tch75ooqpsi4Bm.jpg",
-    description: "Vellai kuzhambu with tender coconut & garlic",
-    ingredients: ["Tender coconut 1 cup", "Garlic 10 cloves", "Black pepper 1 tbsp", "Cumin seeds 1 tsp", "Coconut milk", "Curry leaves"],
-    steps: [
-      "1. Grind pepper, cumin & garlic coarsely",
-      "2. Cook tender coconut with spices",
-      "3. Add coconut milk & simmer gently",
-      "4. Temper with ghee & curry leaves"
+  description: "Karuppu Ulundhu Podi – ஆரோக்கியமான பாரம்பரிய பொடி; எலும்பு வலிமைக்கு நல்லது.",
+    ingredients: [
+      "கருப்பு உளுந்து – 1/2 cup",
+      "மிளகாய் – 5",
+      "பூண்டு – 5 பல்",
+      "உப்பு – தேவைக்கு"
     ],
-    tips: "Use fresh tender coconut for best results.",
-    prepTime: "20 mins",
-    cookTime: "20 mins"
-  },
-  {
+    steps: [
+      "1. உளுந்து வறுக்கவும்",
+      "2. மிளகாய், பூண்டு வறுக்கவும்",
+      "3. அனைத்தையும் அரைக்கவும்",
+      "4. சேமித்து பயன்படுத்தவும்"
+    ],
+    tips: "Good for health and strength.",
+    prepTime: "10 mins",
+    cookTime: "15 mins"
+  }, {
     id: 4,
     title: "Ellu Podi",
     category: "Side Dish",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOFZnu6TJZ_7ATeuZGji5sN2p0lnjRERuryA&s",
-    description: "Cabbage poriyal - simple yet delicious side",
-    ingredients: ["Cabbage 1 medium", "Mustard seeds", "Urad dal", "Red chili 2", "Coconut grated 1/4 cup", "Curry leaves"],
-    steps: [
-      "1. Chop cabbage finely",
-      "2. Temper mustard, urad dal, chili & curry leaves",
-      "3. Add cabbage & salt, cook covered till soft",
-      "4. Mix with grated coconut"
+    description: "Ellu Podi – எள்ளு கொண்டு செய்யப்படும் சுவையான பொடி; சாதத்துக்கு super combo.",
+    ingredients: [
+      "எள்ளு – 1/2 cup",
+      "மிளகாய் – 4",
+      "பூண்டு – 3 பல்",
+      "உப்பு – தேவைக்கு"
     ],
-    tips: "Don't overcook - crunch is key!",
+    steps: [
+      "1. எள்ளு வறுக்கவும்",
+      "2. மிளகாய், பூண்டு வறுக்கவும்",
+      "3. அனைத்தையும் அரைக்கவும்",
+      "4. சேமிக்கவும்"
+    ],
+    tips: "Do not over roast sesame seeds.",
     prepTime: "10 mins",
-    cookTime: "15 mins"
+    cookTime: "10 mins"
   },
-  {
+
+ {
     id: 5,
-    title: "Vllarai Podi",
+    title: "Vallarai Podi",
     category: "Dessert",
     image: "https://in.gramango.com/uploads/products/1650698310vpg.jpg",
-    description: "Paal payasam made with organic milk",
-    ingredients: ["Milk 1L", "Sago 1/2 cup", "Sugar 1 cup", "Cardamom 4", "Cashews & raisins"],
-    steps: [
-      "1. Cook sago in water till transparent",
-      "2. Boil milk with cardamom till thick",
-      "3. Add cooked sago & sugar",
-      "4. Fry cashews & raisins, garnish"
+    description: "Vallarai Podi – நினைவாற்றல் மற்றும் ஆரோக்கியத்திற்கு உதவும் பாரம்பரிய பொடி.",
+    ingredients: [
+      "வல்லாரை இலை – 1 cup",
+      "மிளகாய் – 4",
+      "பூண்டு – 3 பல்",
+      "உப்பு – தேவைக்கு"
     ],
-    tips: "Slow cooking gives best texture.",
-    prepTime: "15 mins",
-    cookTime: "45 mins"
+    steps: [
+      "1. வல்லாரை இலை வறுக்கவும்",
+      "2. மிளகாய், பூண்டு சேர்த்து வறுக்கவும்",
+      "3. அனைத்தையும் அரைக்கவும்",
+      "4. சேமிக்கவும்"
+    ],
+    tips: "Good for brain health.",
+    prepTime: "10 mins",
+    cookTime: "10 mins"
   }
 ];
 
