@@ -276,7 +276,7 @@ function openRecipeModal(id) {
       <a href="#recipes" class="flex-1 bg-gradient-to-r from-primary-500 to-organic-green text-white py-4 px-8 rounded-2xl font-semibold text-lg text-center hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3">
         ← Back to Recipes
       </a>
-      <a href="https://wa.me/919894567890?text=Hi!%20I%20want%20to%20order%20${recipe.title}" class="flex-1 bg-green-500 text-white py-4 px-8 rounded-2xl font-semibold text-lg text-center hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3">
+      <a href="https://wa.me/919600572691?text=Hi!%20I%20want%20to%20order%20${recipe.title}" class="flex-1 bg-green-500 text-white py-4 px-8 rounded-2xl font-semibold text-lg text-center hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3">
         📱 Order Ingredients
       </a>
     </div>
@@ -314,7 +314,7 @@ function renderProducts(container, productList) {
       <div class="p-6 flex-0">
         <h4 class="text-2xl font-bold text-gray-900 mb-3">${product.name}</h4>
         <p class="text-gray-600 mb-6 flex-1">${product.description}</p>
-        <a href="https://wa.me/919894567890?text=Hi!%20I%20want%20to%20order%20${product.name.replace(/\\(.*\\)/, '')}" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-6 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-[1.02] transition-all block text-center">
+        <a href="https://wa.me/919600572691?text=Hi!%20I%20want%20to%20order%20${product.name.replace(/\\(.*\\)/, '')}" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-6 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-[1.02] transition-all block text-center">
           Order on WhatsApp 📱
         </a>
       </div>
