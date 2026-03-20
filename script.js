@@ -13,36 +13,12 @@ const recipes = [
       "2.வறுக்கவும்",
       "3. அரைக்கவும்",
       "4. தாளிக்கவும் & கிளறவும்"
-      ]
     ],
   tips: "Cook pirandai well to reduce bitterness. Use enough oil for better taste and longer shelf life.",
   prepTime: "10 mins",
   cookTime: "20 mins"
 
   },
-title: "Idli Podi",
-category: "South Indian",
-image: "https://source.unsplash.com/300x300/?idli",
-description: "Idli Podi – காரமான மற்றும் நறுமணமுள்ள தென்னிந்திய பொடி; இட்லி, தோசைக்கு சிறந்த சைடு டிஷ்.",
-ingredients: [
-  "உலர்ந்த மிளகாய் – 10-12",
-  "கடலை பருப்பு – 2 tbsp",
-  "உளுத்தம் பருப்பு – 2 tbsp",
-  "எள்ளு – 1 tbsp",
-  "பூண்டு – 4 பல்",
-  "பெருங்காயம் – சிட்டிகை",
-  "உப்பு – தேவைக்கு"
-],
-steps: [
-  "1. மிளகாய், கடலை பருப்பு, உளுத்தம் பருப்பை தனித்தனியாக வறுக்கவும்",
-  "2. எள்ளை தனியாக லேசாக வறுக்கவும்",
-  "3. அனைத்தையும் குளிர வைத்து, பூண்டு, உப்பு, பெருங்காயம் சேர்த்து அரைக்கவும்",
-  "4. காற்று புகாத டப்பாவில் சேமித்து, இட்லி/தோசையுடன் பரிமாறவும்"
-],
-tips: "Roast ingredients well for rich flavor. Add sesame oil while serving for best taste.",
-prepTime: "10 mins",
-cookTime: "10 mins"
-
   {
     id: 2,
       title: "Idli Podi",
