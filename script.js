@@ -13,6 +13,7 @@ const recipes = [
       "2.வறுக்கவும்",
       "3. அரைக்கவும்",
       "4. தாளிக்கவும் & கிளறவும்"
+      ]
     ],
   tips: "Cook pirandai well to reduce bitterness. Use enough oil for better taste and longer shelf life.",
   prepTime: "10 mins",
