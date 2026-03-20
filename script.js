@@ -32,7 +32,7 @@ const recipes = [
     id: 2,
     title: "Idli Podi",
     category: "South Indian",
-    image: "https://rakskitchen.net/idli-milagai-podi-recipe-how-to-make-idli-podi",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdl5necT5OCNgYCMAfuzjwmtI5MfKUtF0zaA&s",
     description: "Idli Podi – Spicy and aromatic South Indian powder; best side dish for idli and dosa.",
     ingredients: [
       "Dry red chillies – 10-12",
@@ -136,7 +136,7 @@ const products = [
     id: 2,
     name: "Idly Podi",
     price: "₹180",
-    image: "https://rakskitchen.net/idli-milagai-podi-recipe-how-to-make-idli-podi",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdl5necT5OCNgYCMAfuzjwmtI5MfKUtF0zaA&s",
     description: "2 servings of piping hot sambar rice with pickle"
   },
   {
