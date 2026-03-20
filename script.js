@@ -1,110 +1,122 @@
-// Data Arrays - Easy to edit
 const recipes = [
   {
     id: 1,
-    title: "Piranda Thokku",
+    title: "Pirandai Thokku",
     category: "South Indian",
     image: "https://i.ytimg.com/vi/s80e-UmMt1M/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBJvXrbXC4oV1_W2G2UI1aP8jExvQ",
-    description: "Pirandai Thokku – பாரம்பரிய தமிழ் சைடு டிஷ், பிரண்டை கொண்டு செய்யப்பட்ட சுவையான மற்றும் ஆரோக்கியமான தொக்கு; சாதம், இட்லி, தோசைக்கு perfect combo. 👍",
-    ingredients: ["பிரண்டை (Pirandai) – 1 cup (சுத்தம் செய்து நறுக்கப்பட்டது)","எண்ணெய் – 2 tbsp", "புளி – சிறிய எலுமிச்சை அளவ", "உலர்ந்த மிளகாய் – 4–6", "பூண்டு – 5 பல்", "கடுகு – 1 tsp", "உளுத்தம் பருப்பு – 1 tsp", "பெருங்காயம் – சிட்டிக","மஞ்சள் தூள் – ¼ tsp","உப்பு – தேவைக்க"],
-
-    steps: [
-      "1. பிரண்டை தயார் செய்யவும்",
-      "2.வறுக்கவும்",
-      "3. அரைக்கவும்",
-      "4. தாளிக்கவும் & கிளறவும்"
+    description: "Pirandai Thokku – Traditional Tamil side dish made with pirandai; tasty and healthy. Perfect combo with rice, idli, and dosa 👍",
+    ingredients: [
+      "Pirandai – 1 cup (cleaned & chopped)",
+      "Oil – 2 tbsp",
+      "Tamarind – small lemon size",
+      "Dry red chillies – 4–6",
+      "Garlic – 5 cloves",
+      "Mustard seeds – 1 tsp",
+      "Urad dal – 1 tsp",
+      "Asafoetida – a pinch",
+      "Turmeric powder – ¼ tsp",
+      "Salt – as needed"
     ],
-  tips: "Cook pirandai well to reduce bitterness. Use enough oil for better taste and longer shelf life.",
-  prepTime: "10 mins",
-  cookTime: "20 mins"
-
+    steps: [
+      "1. Prepare pirandai",
+      "2. Roast ingredients",
+      "3. Grind into paste",
+      "4. Temper and mix well"
+    ],
+    tips: "Cook pirandai well to reduce bitterness. Use enough oil for better taste and shelf life.",
+    prepTime: "10 mins",
+    cookTime: "20 mins"
   },
+
   {
     id: 2,
-      title: "Idli Podi",
-category: "South Indian",
-image: "https://rakskitchen.net/idli-milagai-podi-recipe-how-to-make-idli-podi",
-description: "Idli Podi – காரமான மற்றும் நறுமணமுள்ள தென்னிந்திய பொடி; இட்லி, தோசைக்கு சிறந்த சைடு டிஷ்.",
-ingredients: [
-  "உலர்ந்த மிளகாய் – 10-12",
-  "கடலை பருப்பு – 2 tbsp",
-  "உளுத்தம் பருப்பு – 2 tbsp",
-  "எள்ளு – 1 tbsp",
-  "பூண்டு – 4 பல்",
-  "பெருங்காயம் – சிட்டிகை",
-  "உப்பு – தேவைக்கு"
-],
-  steps: [
-    "1. மிளகாய், கடலை பருப்பு, உளுத்தம் பருப்பை தனித்தனியாக வறுக்கவும்",
-    "2. எள்ளை தனியாக லேசாக வறுக்கவும்",
-    "3. அனைத்தையும் குளிர வைத்து, பூண்டு, உப்பு, பெருங்காயம் சேர்த்து அரைக்கவும்",
-    "4. காற்று புகாத டப்பாவில் சேமித்து, இட்லி/தோசையுடன் பரிமாறவும்"
-  ],
-    tips: "Roast ingredients well for rich flavor. Add sesame oil while serving for best taste.",
+    title: "Idli Podi",
+    category: "South Indian",
+    image: "https://rakskitchen.net/idli-milagai-podi-recipe-how-to-make-idli-podi",
+    description: "Idli Podi – Spicy and aromatic South Indian powder; best side dish for idli and dosa.",
+    ingredients: [
+      "Dry red chillies – 10-12",
+      "Chana dal – 2 tbsp",
+      "Urad dal – 2 tbsp",
+      "Sesame seeds – 1 tbsp",
+      "Garlic – 4 cloves",
+      "Asafoetida – a pinch",
+      "Salt – as needed"
+    ],
+    steps: [
+      "1. Roast chillies, chana dal, and urad dal separately",
+      "2. Lightly roast sesame seeds",
+      "3. Cool and grind with garlic, salt, and asafoetida",
+      "4. Store in an airtight container"
+    ],
+    tips: "Roast ingredients well for rich flavor. Add sesame oil while serving.",
     prepTime: "10 mins",
     cookTime: "10 mins"
   },
+
   {
     id: 3,
-    title: "Karuppu ulunthu Etli Podi",
+    title: "Karuppu Ulundhu Idli Podi",
     category: "Tamil Special",
     image: "https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/indian-express-tamil/media/media_files/LrBYq8Tch75ooqpsi4Bm.jpg",
-  description: "Karuppu Ulundhu Podi – ஆரோக்கியமான பாரம்பரிய பொடி; எலும்பு வலிமைக்கு நல்லது.",
+    description: "Karuppu Ulundhu Podi – Healthy traditional powder; good for bone strength.",
     ingredients: [
-      "கருப்பு உளுந்து – 1/2 cup",
-      "மிளகாய் – 5",
-      "பூண்டு – 5 பல்",
-      "உப்பு – தேவைக்கு"
+      "Black urad dal – 1/2 cup",
+      "Dry red chillies – 5",
+      "Garlic – 5 cloves",
+      "Salt – as needed"
     ],
     steps: [
-      "1. உளுந்து வறுக்கவும்",
-      "2. மிளகாய், பூண்டு வறுக்கவும்",
-      "3. அனைத்தையும் அரைக்கவும்",
-      "4. சேமித்து பயன்படுத்தவும்"
+      "1. Roast urad dal",
+      "2. Roast chillies and garlic",
+      "3. Grind everything",
+      "4. Store and use"
     ],
     tips: "Good for health and strength.",
     prepTime: "10 mins",
     cookTime: "15 mins"
-  }, {
+  },
+
+  {
     id: 4,
     title: "Ellu Podi",
     category: "Side Dish",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOFZnu6TJZ_7ATeuZGji5sN2p0lnjRERuryA&s",
-    description: "Ellu Podi – எள்ளு கொண்டு செய்யப்படும் சுவையான பொடி; சாதத்துக்கு super combo.",
+    description: "Ellu Podi – Delicious sesame powder; great combo with rice.",
     ingredients: [
-      "எள்ளு – 1/2 cup",
-      "மிளகாய் – 4",
-      "பூண்டு – 3 பல்",
-      "உப்பு – தேவைக்கு"
+      "Sesame seeds – 1/2 cup",
+      "Dry red chillies – 4",
+      "Garlic – 3 cloves",
+      "Salt – as needed"
     ],
     steps: [
-      "1. எள்ளு வறுக்கவும்",
-      "2. மிளகாய், பூண்டு வறுக்கவும்",
-      "3. அனைத்தையும் அரைக்கவும்",
-      "4. சேமிக்கவும்"
+      "1. Roast sesame seeds",
+      "2. Roast chillies and garlic",
+      "3. Grind everything",
+      "4. Store properly"
     ],
     tips: "Do not over roast sesame seeds.",
     prepTime: "10 mins",
     cookTime: "10 mins"
   },
 
- {
+  {
     id: 5,
     title: "Vallarai Podi",
-    category: "Dessert",
+    category: "Healthy",
     image: "https://in.gramango.com/uploads/products/1650698310vpg.jpg",
-    description: "Vallarai Podi – நினைவாற்றல் மற்றும் ஆரோக்கியத்திற்கு உதவும் பாரம்பரிய பொடி.",
+    description: "Vallarai Podi – Traditional powder that supports memory and health.",
     ingredients: [
-      "வல்லாரை இலை – 1 cup",
-      "மிளகாய் – 4",
-      "பூண்டு – 3 பல்",
-      "உப்பு – தேவைக்கு"
+      "Vallarai leaves – 1 cup",
+      "Dry red chillies – 4",
+      "Garlic – 3 cloves",
+      "Salt – as needed"
     ],
     steps: [
-      "1. வல்லாரை இலை வறுக்கவும்",
-      "2. மிளகாய், பூண்டு சேர்த்து வறுக்கவும்",
-      "3. அனைத்தையும் அரைக்கவும்",
-      "4. சேமிக்கவும்"
+      "1. Roast vallarai leaves",
+      "2. Add chillies and garlic, roast",
+      "3. Grind everything",
+      "4. Store properly"
     ],
     tips: "Good for brain health.",
     prepTime: "10 mins",
