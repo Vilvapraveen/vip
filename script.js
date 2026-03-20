@@ -4,8 +4,7 @@ const recipes = [
     id: 1,
     title: "Piranda Thokku",
     category: "South Indian",
-    // image: "https://ibb.co/hFPsYvKR",
-    image: "/PIRANDAI-THOKKU.png",
+    image: "https://www.youtube.com/watch?v=s80e-UmMt1M",
     description: "Traditional Tamil sambar with fresh drumstick and brinjal",
     ingredients: ["Toor dal 1 cup", "Drumstick 2", "Brinjal 4 small", "Tamarind extract", "Sambar powder 3 tbsp", "Mustard seeds", "Curry leaves"],
     steps: [
@@ -22,7 +21,7 @@ const recipes = [
     id: 2,
     title: "Idli Podi",
     category: "South Indian",
-    image: "/Curry-leaves-idli-podi-1.png",
+    image: "https://rakskitchen.net/idli-milagai-podi-recipe-how-to-make-idli-podi/",
     description: "Spicy pepper rasam made with organic tomatoes",
     ingredients: ["Tomatoes 3", "Tamarind small lemon size", "Pepper 2 tsp", "Cumin 1 tsp", "Garlic 3 cloves", "Curry leaves", "Coriander leaves"],
     steps: [
@@ -39,7 +38,7 @@ const recipes = [
     id: 3,
     title: "Karuppu ulunthu Etli Podi",
     category: "Tamil Special",
-    image: "https://images.unsplash.com/photo-1567306301408-9b74779a11af?w=400&h=300&fit=crop",
+    image: "https://tamil.indianexpress.com/lifestyle/karuppu-ulundhu-idli-podi-recipe-in-tamil-4478084",
     description: "Vellai kuzhambu with tender coconut & garlic",
     ingredients: ["Tender coconut 1 cup", "Garlic 10 cloves", "Black pepper 1 tbsp", "Cumin seeds 1 tsp", "Coconut milk", "Curry leaves"],
     steps: [
@@ -54,9 +53,9 @@ const recipes = [
   },
   {
     id: 4,
-    title: "Poriyal",
+    title: "Ellu Podi",
     category: "Side Dish",
-    image: "https://images.unsplash.com/photo-1628074013041-9d36a78397a3?w=400&h=300&fit=crop",
+    image: "https://www.dmtraders.com/product/ellu-podi/?srsltid=AfmBOooSuzzEBR2iqcA243TidziHBzJyUoXudJ_sZZQgSmxLruWs3Pp4",
     description: "Cabbage poriyal - simple yet delicious side",
     ingredients: ["Cabbage 1 medium", "Mustard seeds", "Urad dal", "Red chili 2", "Coconut grated 1/4 cup", "Curry leaves"],
     steps: [
@@ -71,9 +70,9 @@ const recipes = [
   },
   {
     id: 5,
-    title: "Payasam",
+    title: "Vllarai Podi",
     category: "Dessert",
-    image: "https://images.unsplash.com/photo-1562440499-64b320180f9c?w=400&h=300&fit=crop",
+    image: "https://www.podhigaiherbs.com/products/vallarai-podi-brahmi-leaves-powder/1658361000000069987?srsltid=AfmBOoqlSU7GqqanIJJzzaX4pUHQw5cau5SL7UJ6Tht1sgTePnnRjUk-",
     description: "Paal payasam made with organic milk",
     ingredients: ["Milk 1L", "Sago 1/2 cup", "Sugar 1 cup", "Cardamom 4", "Cashews & raisins"],
     steps: [
