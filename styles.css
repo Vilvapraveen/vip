@@ -208,6 +208,53 @@
   }
 }
 
+/* Stable Close Button for Scrolling Modals */
+#recipe-modal, #cart-modal {
+  overflow: hidden;
+}
+
+#recipe-modal > div, #cart-modal > div {
+  overflow-y: auto;
+}
+
+#recipe-modal button[id="close-modal"],
+#cart-modal button[onclick*="closeCart"] {
+  position: fixed !important;
+  top: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 10px 40px rgba(239, 68, 68, 0.3);
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #ef4444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 9999 !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#recipe-modal button[id="close-modal"]:hover,
+#cart-modal button[onclick*="closeCart"]:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 15px 50px rgba(239, 68, 68, 0.4);
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+}
+
+#recipe-modal button[id="close-modal"]:active,
+#cart-modal button[onclick*="closeCart"]:active {
+  transform: scale(0.95);
+}
+
 /* Custom Scrollbar for Modals */
 .modal-scroll::-webkit-scrollbar {
   width: 6px;
@@ -235,4 +282,112 @@ button:focus, input:focus, a:focus {
     display: none !important;
   }
 }
+
+/* Mobile-first responsive enhancements */
+@media (max-width: 1024px) {
+  body {
+    background: linear-gradient(180deg, #fff3f2 0%, #f0fdf4 50%, #fffbea 100%);
+  }
+
+  header {
+    padding: 0.75rem 1rem;
+  }
+
+  .max-w-7xl, .max-w-6xl, .max-w-4xl {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  nav.hidden.md\\:flex {
+    display: none !important;
+  }
+
+  #mobile-menu {
+    display: block !important;
+    position: relative;
+    max-height: 480px;
+    overflow-y: auto;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .recipe-card, .product-card, .feedback-card {
+    padding: 0.75rem;
+    border-radius: 1.25rem;
+    min-height: auto;
+  }
+
+  .recipe-card .h-64, .product-card .h-64 {
+    height: 230px !important;
+  }
+
+  #recipe-grid, #product-grid, #feedback-grid, .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+
+  .btn-primary, .btn-secondary, .btn-glow, button, .product-card a {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .filter-chip {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+
+  #cart-count, #cart-count-mobile {
+    width: 1.85rem;
+    height: 1.85rem;
+    font-size: 0.72rem;
+  }
+
+  .header .flex {
+    flex-wrap: wrap;
+  }
+
+  .product-card .group-hover\\:opacity-100 {
+    opacity: 1;
+  }
+
+  #contact-form input, #contact-form textarea, #newsletter-form input {
+    font-size: 0.95rem;
+    padding: 0.85rem;
+  }
+}
+
+@media (max-width: 640px) {
+  h1, h2, h3, h4, h5 {
+    line-height: 1.25;
+  }
+
+  .text-2xl { font-size: 1.3rem !important; }
+  .text-3xl { font-size: 1.5rem !important; }
+  .text-4xl { font-size: 1.75rem !important; }
+
+  .hero, section {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .feedback-card, .product-card, .recipe-card {
+    transform: none !important;
+  }
+
+  .floating-element { display: none; }
+
+  /* Mobile Close Button Adjustments */
+  #recipe-modal button[id="close-modal"],
+  #cart-modal button[onclick*="closeCart"] {
+    width: 3rem !important;
+    height: 3rem !important;
+    font-size: 1.5rem !important;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
 
