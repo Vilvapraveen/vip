@@ -531,6 +531,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initSmoothScroll();
   initCart();
   initNewsletter();
+  initUserProfile();
+  initAuthForms();
 });
 
 // Cart Functions
@@ -675,7 +677,37 @@ function checkoutCart() {
   const total = cart.reduce((sum, item) => sum + (parseInt(item.price.replace('₹', '')) * item.quantity), 0);
   const whatsappMessage = `Hi Jaya's Organic!\n\nI want to order:\n${message}\n\nTotal: ₹${total}\n\nPlease confirm delivery details.`;
 
+  // Save order to user profile and add loyalty points
+  if (currentUser) {
+    const order = {
+      items: cart.map(item => item.name),
+      total: total,
+      date: new Date().toLocaleDateString(),
+      status: 'pending'
+    };
+    currentUser.orders.push(order);
+    
+    // Add loyalty points (1 point per ₹10 spent)
+    const pointsEarned = Math.floor(total / 10);
+    currentUser.loyaltyPoints += pointsEarned;
+    
+    // Update member level
+    if (currentUser.loyaltyPoints >= 500) {
+      currentUser.memberLevel = 'Gold';
+    } else if (currentUser.loyaltyPoints >= 200) {
+      currentUser.memberLevel = 'Silver';
+    } else if (currentUser.loyaltyPoints >= 100) {
+      currentUser.memberLevel = 'Bronze';
+    }
+    
+    saveCurrentUser();
+  }
+
   window.open(`https://wa.me/919600572691?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  
+  // Clear cart after order
+  cart = [];
+  updateCartDisplay();
 }
 
 // Mobile Menu
@@ -864,6 +896,12 @@ function renderProducts(container, productList) {
       </div>
       <div class="p-6 flex-0">
         <h4 class="text-2xl font-black text-neutral-900 mb-4 font-display group-hover:text-red-600 transition-colors duration-300">${product.name}</h4>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="flex gap-1">
+            ${[1,2,3,4,5].map(star => `<span class="text-amber-400 text-lg">${star <= (product.rating || 4) ? '⭐' : '☆'}</span>`).join('')}
+          </div>
+          <span class="text-sm text-gray-600">(${product.reviews || Math.floor(Math.random() * 50) + 10} reviews)</span>
+        </div>
         <p class="text-neutral-600 mb-6 flex-1 leading-relaxed line-clamp-2">${product.description}</p>
         <div class="flex gap-3">
           <button onclick="addToCart(${product.id})" class="flex-1 bg-gradient-to-r from-red-500 via-green-500 to-amber-500 text-white py-4 px-4 rounded-3xl font-bold text-sm hover:shadow-glow-red hover:scale-105 transition-all duration-300 transform hover:-translate-y-1">
@@ -935,10 +973,11 @@ function initContactForm() {
     // Simple validation
     const formData = new FormData(form);
     const name = formData.get('name');
+    const email = formData.get('email');
     const phone = formData.get('phone');
     const message = formData.get('message');
     
-    if (name && phone && message) {
+    if (name && email && phone && message) {
       // Simulate send
       alert('Thank you! Your message has been sent. We\'ll reply within 2 hours on WhatsApp. 📱');
       form.reset();
@@ -948,24 +987,516 @@ function initContactForm() {
   });
 }
 
-// Newsletter Form
-function initNewsletter() {
-  const newsletterForm = document.getElementById('newsletter-form');
+// User Profile System
+let currentUser = null;
+let allUsers = JSON.parse(localStorage.getItem('jayasOrganicUsers')) || [];
+
+function initUserProfile() {
+  // Load user data from localStorage
+  const savedUser = localStorage.getItem('jayasOrganicCurrentUser');
+  if (savedUser) {
+    currentUser = JSON.parse(savedUser);
+  } else {
+    // Create guest user
+    currentUser = {
+      id: null,
+      name: 'Guest User',
+      email: '',
+      phone: '',
+      photo: '',
+      language: 'en',
+      rating: 0,
+      orders: [],
+      addresses: [],
+      paymentMethods: [],
+      loyaltyPoints: 0,
+      memberLevel: 'Bronze',
+      referralCode: 'JAYA' + Math.random().toString(36).substr(2, 6).toUpperCase(),
+      notifications: {
+        email: true,
+        sms: true,
+        whatsapp: true
+      }
+    };
+  }
+  updateProfileButton();
+  updateProfileDisplay();
+}
+
+function handleProfileClick() {
+  if (currentUser && currentUser.id) {
+    openProfile();
+  } else {
+    openAuthModal();
+  }
+}
+
+function updateProfileButton() {
+  const profileBtn = document.getElementById('profile-btn');
+  const mobileProfileText = document.getElementById('mobile-profile-text');
   
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
+  if (currentUser && currentUser.id) {
+    // Logged in - show profile
+    if (profileBtn) profileBtn.onclick = openProfile;
+    if (mobileProfileText) mobileProfileText.textContent = 'Profile';
+  } else {
+    // Not logged in - show login
+    if (profileBtn) profileBtn.onclick = openAuthModal;
+    if (mobileProfileText) mobileProfileText.textContent = 'Login';
+  }
+}
+
+function openAuthModal() {
+  const modal = document.getElementById('auth-modal');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  showLoginForm();
+}
+
+function closeAuthModal() {
+  document.getElementById('auth-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function showLoginForm() {
+  document.getElementById('login-form').classList.remove('hidden');
+  document.getElementById('signup-form').classList.add('hidden');
+}
+
+function showSignupForm() {
+  document.getElementById('login-form').classList.add('hidden');
+  document.getElementById('signup-form').classList.remove('hidden');
+}
+
+function initAuthForms() {
+  // Login form
+  const loginForm = document.getElementById('login-form-element');
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      const formData = new FormData(loginForm);
+      const email = formData.get('email');
+      const password = formData.get('password');
       
-      const email = e.target.querySelector('input[type="email"]').value;
-      
-      if (email) {
-        alert('Thank you for subscribing! We\'ll keep you updated with our latest recipes and products. 📧');
-        e.target.reset();
+      const user = allUsers.find(u => u.email === email && u.password === password);
+      if (user) {
+        currentUser = { ...user };
+        saveCurrentUser();
+        updateProfileButton();
+        closeAuthModal();
+        alert('Login successful! Welcome back! 🎉');
       } else {
-        alert('Please enter a valid email address');
+        alert('Invalid email or password. Please try again.');
       }
     });
   }
+  
+  // Signup form
+  const signupForm = document.getElementById('signup-form-element');
+  if (signupForm) {
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(signupForm);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const password = formData.get('password');
+      
+      // Check if user already exists
+      if (allUsers.find(u => u.email === email)) {
+        alert('An account with this email already exists.');
+        return;
+      }
+      
+      const newUser = {
+        id: Date.now(),
+        name,
+        email,
+        phone,
+        password,
+        photo: '',
+        language: 'en',
+        rating: 0,
+        orders: [],
+        addresses: [],
+        paymentMethods: [],
+        loyaltyPoints: 0,
+        memberLevel: 'Bronze',
+        referralCode: 'JAYA' + Math.random().toString(36).substr(2, 6).toUpperCase(),
+        notifications: {
+          email: true,
+          sms: true,
+          whatsapp: true
+        }
+      };
+      
+      allUsers.push(newUser);
+      currentUser = { ...newUser };
+      saveUsersData();
+      saveCurrentUser();
+      updateProfileButton();
+      closeAuthModal();
+      alert('Account created successfully! Welcome to Jaya\'s Organic! 🌱');
+    });
+  }
+}
+
+function socialLogin(provider) {
+  alert(`${provider} login is coming soon! For now, please use email signup.`);
+}
+
+function openProfile() {
+  const modal = document.getElementById('profile-modal');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  updateProfileDisplay();
+}
+
+function closeProfile() {
+  document.getElementById('profile-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function updateProfileDisplay() {
+  if (!currentUser) return;
+  
+  const profileName = document.getElementById('profile-name');
+  const profileEmail = document.getElementById('profile-email');
+  const profilePhoto = document.getElementById('profile-photo');
+  const userRating = document.getElementById('user-rating');
+  const orderCount = document.getElementById('order-count');
+  const referralCode = document.getElementById('referral-code');
+  const languageSelect = document.getElementById('language-select');
+  const loyaltyPoints = document.getElementById('loyalty-points');
+  const memberLevel = document.getElementById('member-level');
+  const loyaltyProgress = document.getElementById('loyalty-progress');
+  
+  if (profileName) profileName.textContent = currentUser.name;
+  if (profileEmail) profileEmail.textContent = currentUser.email || 'Not logged in';
+  if (profilePhoto) profilePhoto.src = currentUser.photo || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjE1IiBmaWxsPSIjOUNBM0FGIi8+CjxwYXRoIGQ9Ik0yMCA3NVEyMCA2MCAzMCA2MEMzMCA1NSA0MCA1NSA0MCA2MEM0MCA3NSA1MCA3NSA1MCA4MEM1MCA4NSA2MCA4NSA2MCA3NVoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+';
+  if (userRating) userRating.textContent = currentUser.rating.toFixed(1);
+  if (orderCount) orderCount.textContent = currentUser.orders.length;
+  if (referralCode) referralCode.textContent = currentUser.referralCode;
+  if (languageSelect) languageSelect.value = currentUser.language;
+  if (loyaltyPoints) loyaltyPoints.textContent = currentUser.loyaltyPoints;
+  if (memberLevel) memberLevel.textContent = currentUser.memberLevel;
+  if (loyaltyProgress) {
+    const progress = Math.min((currentUser.loyaltyPoints / 100) * 100, 100);
+    loyaltyProgress.style.width = progress + '%';
+  }
+  
+  // Update order history
+  updateOrderHistory();
+  // Update rate products
+  updateRateProducts();
+  // Update payment methods
+  updatePaymentMethods();
+}
+
+function changeProfilePhoto() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  input.onchange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        currentUser.photo = e.target.result;
+        const profilePhoto = document.getElementById('profile-photo');
+        if (profilePhoto) profilePhoto.src = e.target.result;
+        saveCurrentUser();
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  input.click();
+}
+
+function changeLanguage() {
+  const languageSelect = document.getElementById('language-select');
+  if (languageSelect) {
+    const lang = languageSelect.value;
+    currentUser.language = lang;
+    saveCurrentUser();
+    alert(`Language changed to ${lang === 'en' ? 'English' : lang === 'ta' ? 'தமிழ்' : 'हिंदी'}`);
+  }
+}
+
+function updateOrderHistory() {
+  const historyDiv = document.getElementById('order-history');
+  if (!historyDiv) return;
+  
+  if (currentUser.orders.length === 0) {
+    historyDiv.innerHTML = '<p class="text-gray-500 text-center py-4">No orders yet</p>';
+    return;
+  }
+  
+  historyDiv.innerHTML = currentUser.orders.map(order => `
+    <div class="bg-gray-50 rounded-xl p-3">
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="font-semibold">${order.items.join(', ')}</p>
+          <p class="text-sm text-gray-600">${order.date}</p>
+        </div>
+        <span class="font-bold text-green-600">₹${order.total}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function updateRateProducts() {
+  const rateDiv = document.getElementById('rate-products');
+  if (!rateDiv) return;
+  
+  // Get unique products from orders
+  const ratedProducts = new Set(currentUser.orders.flatMap(order => order.items));
+  
+  if (ratedProducts.size === 0) {
+    rateDiv.innerHTML = '<p class="text-gray-500 text-center py-4">Rate products you\'ve purchased</p>';
+    return;
+  }
+  
+  rateDiv.innerHTML = Array.from(ratedProducts).map(product => `
+    <div class="bg-gray-50 rounded-xl p-3">
+      <div class="flex justify-between items-center">
+        <span class="font-semibold">${product}</span>
+        <div class="flex gap-1">
+          ${[1,2,3,4,5].map(star => `
+            <button onclick="rateProduct('${product}', ${star})" class="text-2xl hover:scale-110 transition-transform">
+              ${star <= (currentUser.ratings?.[product] || 0) ? '⭐' : '☆'}
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function rateProduct(product, rating) {
+  if (!currentUser.ratings) currentUser.ratings = {};
+  currentUser.ratings[product] = rating;
+  
+  // Update overall rating
+  const ratings = Object.values(currentUser.ratings);
+  currentUser.rating = ratings.reduce((a, b) => a + b, 0) / ratings.length;
+  
+  saveCurrentUser();
+  updateProfileDisplay();
+}
+
+function shareReferral() {
+  const referralCode = currentUser.referralCode;
+  const message = `Join Jaya's Organic with my referral code: ${referralCode} and get exclusive discounts! 🍲✨`;
+  
+  if (navigator.share) {
+    navigator.share({
+      title: 'Jaya\'s Organic Referral',
+      text: message,
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(message).then(() => {
+      alert('Referral code copied to clipboard! 📋');
+    });
+  }
+}
+
+function saveProfile() {
+  saveCurrentUser();
+  alert('Profile saved successfully! 💾');
+}
+
+function logoutUser() {
+  if (confirm('Are you sure you want to logout?')) {
+    localStorage.removeItem('jayasOrganicUser');
+    currentUser = null;
+    initUserProfile();
+    closeProfile();
+    alert('Logged out successfully! 👋');
+  }
+}
+
+function updatePaymentMethods() {
+  const paymentDiv = document.getElementById('payment-methods');
+  if (!paymentDiv) return;
+  
+  if (currentUser.paymentMethods.length === 0) {
+    paymentDiv.innerHTML = '<p class="text-gray-500 text-center py-4">No payment methods saved</p>';
+    return;
+  }
+  
+  paymentDiv.innerHTML = currentUser.paymentMethods.map(method => `
+    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">${method.type === 'card' ? '💳' : '🏦'}</span>
+        <div>
+          <p class="font-semibold">${method.type === 'card' ? '•••• •••• •••• ' + method.last4 : method.bankName}</p>
+          <p class="text-sm text-gray-600">${method.type === 'card' ? method.cardType : 'Bank Account'}</p>
+        </div>
+      </div>
+      <button onclick="removePaymentMethod('${method.id}')" class="text-red-500 hover:text-red-700">×</button>
+    </div>
+  `).join('');
+}
+
+function editProfileInfo() {
+  const newName = prompt('Enter your full name:', currentUser.name);
+  const newPhone = prompt('Enter your phone number:', currentUser.phone || '');
+  
+  if (newName && newName.trim()) {
+    currentUser.name = newName.trim();
+    if (newPhone) currentUser.phone = newPhone.trim();
+    saveCurrentUser();
+    updateProfileDisplay();
+    alert('Profile updated successfully!');
+  }
+}
+
+function changePassword() {
+  if (!currentUser.id) {
+    alert('Please login to change password.');
+    return;
+  }
+  
+  const currentPassword = prompt('Enter current password:');
+  if (currentPassword !== currentUser.password) {
+    alert('Current password is incorrect.');
+    return;
+  }
+  
+  const newPassword = prompt('Enter new password (minimum 6 characters):');
+  if (newPassword && newPassword.length >= 6) {
+    currentUser.password = newPassword;
+    saveCurrentUser();
+    saveUsersData();
+    alert('Password changed successfully!');
+  } else {
+    alert('Password must be at least 6 characters long.');
+  }
+}
+
+function manageAddresses() {
+  const addresses = currentUser.addresses || [];
+  let addressText = addresses.length > 0 ? addresses.map((addr, i) => `${i+1}. ${addr}`).join('\n') : 'No addresses saved';
+  
+  const newAddress = prompt('Your addresses:\n' + addressText + '\n\nEnter new address (or leave empty to cancel):');
+  if (newAddress && newAddress.trim()) {
+    if (!currentUser.addresses) currentUser.addresses = [];
+    currentUser.addresses.push(newAddress.trim());
+    saveCurrentUser();
+    alert('Address added successfully!');
+  }
+}
+
+function notificationSettings() {
+  const settings = currentUser.notifications;
+  const newEmail = confirm(`Email notifications: ${settings.email ? 'ON' : 'OFF'}\nClick OK to ${settings.email ? 'turn OFF' : 'turn ON'}`);
+  const newSMS = confirm(`SMS notifications: ${settings.sms ? 'ON' : 'OFF'}\nClick OK to ${settings.sms ? 'turn OFF' : 'turn ON'}`);
+  const newWhatsApp = confirm(`WhatsApp notifications: ${settings.whatsapp ? 'ON' : 'OFF'}\nClick OK to ${settings.whatsapp ? 'turn OFF' : 'turn ON'}`);
+  
+  currentUser.notifications = {
+    email: newEmail,
+    sms: newSMS,
+    whatsapp: newWhatsApp
+  };
+  
+  saveCurrentUser();
+  alert('Notification settings updated!');
+}
+
+function addPaymentMethod() {
+  const type = prompt('Enter payment method type (card/bank):');
+  if (!type || !['card', 'bank'].includes(type.toLowerCase())) {
+    alert('Please enter "card" or "bank"');
+    return;
+  }
+  
+  if (type.toLowerCase() === 'card') {
+    const last4 = prompt('Enter last 4 digits of card:');
+    const cardType = prompt('Enter card type (Visa/Mastercard/etc.):');
+    if (last4 && cardType) {
+      if (!currentUser.paymentMethods) currentUser.paymentMethods = [];
+      currentUser.paymentMethods.push({
+        id: Date.now(),
+        type: 'card',
+        last4,
+        cardType
+      });
+      saveCurrentUser();
+      updatePaymentMethods();
+      alert('Card added successfully!');
+    }
+  } else {
+    const bankName = prompt('Enter bank name:');
+    if (bankName) {
+      if (!currentUser.paymentMethods) currentUser.paymentMethods = [];
+      currentUser.paymentMethods.push({
+        id: Date.now(),
+        type: 'bank',
+        bankName
+      });
+      saveCurrentUser();
+      updatePaymentMethods();
+      alert('Bank account added successfully!');
+    }
+  }
+}
+
+function removePaymentMethod(id) {
+  if (confirm('Are you sure you want to remove this payment method?')) {
+    currentUser.paymentMethods = currentUser.paymentMethods.filter(method => method.id != id);
+    saveCurrentUser();
+    updatePaymentMethods();
+  }
+}
+
+function saveCurrentUser() {
+  localStorage.setItem('jayasOrganicCurrentUser', JSON.stringify(currentUser));
+  
+  // Update user in allUsers array
+  if (currentUser.id) {
+    const userIndex = allUsers.findIndex(u => u.id === currentUser.id);
+    if (userIndex !== -1) {
+      allUsers[userIndex] = { ...currentUser };
+      saveUsersData();
+    }
+  }
+}
+
+function saveUsersData() {
+  localStorage.setItem('jayasOrganicUsers', JSON.stringify(allUsers));
+}
+
+function logoutUser() {
+  if (confirm('Are you sure you want to logout?')) {
+    localStorage.removeItem('jayasOrganicCurrentUser');
+    currentUser = null;
+    initUserProfile();
+    closeProfile();
+    alert('Logged out successfully! 👋');
+  }
+}
+function initNewsletter() {
+  const newsletterForm = document.getElementById('newsletter-form');
+  const profileNewsletterForm = document.getElementById('profile-newsletter-form');
+  
+  [newsletterForm, profileNewsletterForm].forEach(form => {
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const email = e.target.querySelector('input[type="email"]').value;
+        
+        if (email) {
+          alert('Thank you for subscribing! We\'ll keep you updated with our latest recipes and products. 📧');
+          e.target.reset();
+        } else {
+          alert('Please enter a valid email address');
+        }
+      });
+    }
+  });
 }
 
 // Smooth Scroll Enhancement
