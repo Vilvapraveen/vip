@@ -1,0 +1,102 @@
+{
+  "name": "Jaya's Organic — Authentic Tamil Food",
+  "short_name": "Jaya's Organic",
+  "description": "Authentic Tamil homemade food — Order fresh organic products, explore traditional recipes, delivered to your door.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "background_color": "#fef2f2",
+  "theme_color": "#ef4444",
+  "orientation": "portrait-primary",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["food", "shopping", "lifestyle"],
+  "prefer_related_applications": false,
+
+  "icons": [
+    {
+      "src": "https://placehold.co/72x72/ef4444/ffffff?text=JO&font=montserrat",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://placehold.co/96x96/ef4444/ffffff?text=JO&font=montserrat",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://placehold.co/128x128/ef4444/ffffff?text=JO&font=montserrat",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://placehold.co/192x192/ef4444/ffffff?text=JO&font=montserrat",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://placehold.co/384x384/ef4444/ffffff?text=JO&font=montserrat",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://placehold.co/512x512/ef4444/ffffff?text=JO&font=montserrat",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=390&h=844&fit=crop",
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Home screen on mobile"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1567337710282-00832b415979?w=1280&h=800&fit=crop",
+      "sizes": "1280x800",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Product catalog on desktop"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Shop Products",
+      "short_name": "Shop",
+      "description": "Browse all organic products",
+      "url": "/index.html#products",
+      "icons": [{ "src": "https://placehold.co/96x96/22c55e/ffffff?text=🛍&font=montserrat", "sizes": "96x96" }]
+    },
+    {
+      "name": "View Recipes",
+      "short_name": "Recipes",
+      "description": "Explore Tamil recipes",
+      "url": "/index.html#recipes",
+      "icons": [{ "src": "https://placehold.co/96x96/f59e0b/ffffff?text=🍽&font=montserrat", "sizes": "96x96" }]
+    },
+    {
+      "name": "WhatsApp Order",
+      "short_name": "Order",
+      "description": "Place order on WhatsApp",
+      "url": "https://wa.me/919600572691?text=Hi+Jaya's+Organic!+I'd+like+to+order.",
+      "icons": [{ "src": "https://placehold.co/96x96/16a34a/ffffff?text=📱&font=montserrat", "sizes": "96x96" }]
+    }
+  ],
+
+  "related_applications": [],
+
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaya's Organic — Authentic Tamil Homemade Food | Chennai</title>
+
+  <!-- ── SEO ── -->
+  <meta name="description" content="Authentic Tamil homemade food — Pirandai Thokku, Idli Podi, Vallarai Podi & more. Organic, preservative-free. Order via WhatsApp. Delivery across Chennai.">
+  <meta name="keywords" content="Tamil food, organic food, Pirandai Thokku, Idli Podi, Chennai homemade food, Jaya's Organic, traditional recipes">
+  <meta name="author" content="Jaya's Organic, Chennai">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jayasorganic.in/">
+
+  <!-- ── PWA ── -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ef4444">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Jaya's Organic">
+
+  <!-- ── Apple (iOS Safari) PWA ── -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Jaya's Organic">
+  <link rel="apple-touch-icon" href="https://placehold.co/180x180/ef4444/ffffff?text=JO">
+  <link rel="apple-touch-startup-image" href="https://placehold.co/2048x2732/fef2f2/ef4444?text=Jaya's+Organic">
+
+  <!-- ── Open Graph (WhatsApp / Facebook share) ── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://jayasorganic.in/">
+  <meta property="og:title"       content="Jaya's Organic — Authentic Tamil Homemade Food">
+  <meta property="og:description" content="Fresh, organic Tamil pickles, podis and traditional food. Order now on WhatsApp — delivery across Chennai!">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&h=630&fit=crop">
+  <meta property="og:locale"      content="en_IN">
+  <meta property="og:site_name"   content="Jaya's Organic">
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Jaya's Organic — Authentic Tamil Homemade Food">
+  <meta name="twitter:description" content="Fresh organic Tamil food delivered to your door.">
+  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&h=630&fit=crop">
+
+  <!-- ── Schema.org Structured Data (Google Rich Results) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Jaya's Organic",
+    "description": "Authentic Tamil homemade food — organic, preservative-free",
+    "url": "https://jayasorganic.in",
+    "telephone": "+919600572691",
+    "email": "lokesh967755@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chennai",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "servesCuisine": "Tamil",
+    "priceRange": "₹90–₹250",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "500"
+    },
+    "sameAs": ["https://wa.me/919600572691"]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FIX 1: Clash Display from Fontshare (correct URL) + other fonts -->
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#fef7ed', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d',
+              400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309',
+              800: '#92400e', 900: '#78350f',
+            },
+            secondary: {
+              50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac',
+              400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d',
+              800: '#166534', 900: '#14532d',
+            },
+            accent: {
+              50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 300: '#fca5a5',
+              400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c',
+              800: '#991b1b', 900: '#7f1d1d',
+            },
+            neutral: {
+              50: '#fafafa', 100: '#f5f5f5', 200: '#e5e5e5', 300: '#d4d4d4',
+              400: '#a3a3a3', 500: '#737373', 600: '#525252', 700: '#404040',
+              800: '#262626', 900: '#171717',
+            },
+            warm: {
+              50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+              400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+              800: '#9a3412', 900: '#7c2d12',
+            },
+            earth: {
+              50: '#f7f5f0', 100: '#ede6d6', 200: '#dcc8a8', 300: '#c9a97a',
+              400: '#b68d4c', 500: '#a0712b', 600: '#8b5a2b', 700: '#6f4426',
+              800: '#5a3520', 900: '#4a2c1d',
+            }
+          },
+          fontFamily: {
+            'tamil':   ['"Noto Sans Tamil"', 'serif'],
+            'display': ['"Clash Display"', 'Poppins', 'sans-serif'],
+            'body':    ['"Inter"', 'system-ui', 'sans-serif'],
+            'mono':    ['"JetBrains Mono"', 'monospace'],
+          },
+          animation: {
+            'float':         'float 6s ease-in-out infinite',
+            'glow':          'glow 2s ease-in-out infinite alternate',
+            'bounce-slow':   'bounce 3s infinite',
+            'slide-up':      'slideUp 0.6s ease-out',
+            'fade-in':       'fadeIn 0.8s ease-out',
+            'scale-in':      'scaleIn 0.5s ease-out',
+            'shimmer':       'shimmer 2s linear infinite',
+            'pulse-slow':    'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-gentle': 'bounce 2s infinite',
+            'spin-slow':     'spin 8s linear infinite',
+            /* FIX 2: gradient-x animation added */
+            'gradient-x':   'gradientX 15s ease infinite',
+          },
+          keyframes: {
+            float:     { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-20px)' } },
+            glow:      { from: { boxShadow: '0 0 20px rgba(245,158,11,0.5)' }, to: { boxShadow: '0 0 40px rgba(245,158,11,0.8)' } },
+            slideUp:   { from: { opacity: '0', transform: 'translateY(30px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+            fadeIn:    { from: { opacity: '0' }, to: { opacity: '1' } },
+            scaleIn:   { from: { opacity: '0', transform: 'scale(0.9)' }, to: { opacity: '1', transform: 'scale(1)' } },
+            shimmer:   { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+            /* FIX 2: gradientX keyframe */
+            gradientX: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%':      { backgroundPosition: '100% 50%' },
+            },
+          },
+          boxShadow: {
+            'glow-red':   '0 0 20px rgba(239,68,68,0.3)',
+            'glow-green': '0 0 20px rgba(34,197,94,0.3)',
+            'glow-amber': '0 0 20px rgba(245,158,11,0.3)',
+            'glow-warm':  '0 0 20px rgba(249,115,22,0.3)',
+            'inner-lg':   'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
+            'soft':       '0 2px 15px rgba(0,0,0,0.08)',
+            'soft-lg':    '0 10px 40px rgba(0,0,0,0.1)',
+          },
+          backgroundSize: {
+            '200': '200% 200%',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #fef2f2 0%, #f0fdf4 50%, #fffbeb 100%);
+      min-height: 100vh;
+    }
+
+    .glass-effect {
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ef4444, #22c55e, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card-hover { transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .card-hover:hover { transform: translateY(-12px) rotate(1deg); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+
+    .btn-glow:hover { box-shadow: 0 0 30px rgba(239,68,68,0.4); transform: translateY(-2px); }
+    .floating-element { animation: float 6s ease-in-out infinite; }
+
+    .shimmer-bg {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+    .border-gradient { background: linear-gradient(45deg, #ef4444, #22c55e, #f59e0b); padding: 2px; border-radius: 1rem; }
+    .border-gradient > div { background: white; border-radius: 0.75rem; }
+
+    /* FIX 3: animate-slide-up-modal added */
+    @keyframes slideUpModal {
+      from { opacity: 0; transform: translateY(50px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-slide-up-modal { animation: slideUpModal 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+    @keyframes floatIn   { from { opacity:0; transform: translateY(-30px) scale(0.9); } to { opacity:1; transform: translateY(0) scale(1); } }
+    @keyframes slideUp   { from { opacity:0; transform: translateY(40px); }  to { opacity:1; transform: translateY(0); } }
+    @keyframes fadeIn    { from { opacity:0; transform: scale(0.95); }        to { opacity:1; transform: scale(1); } }
+    @keyframes bounceIn  {
+      0%   { opacity:0; transform: scale(0.3); }
+      50%  { opacity:1; transform: scale(1.05); }
+      70%  { transform: scale(0.9); }
+      100% { opacity:1; transform: scale(1); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(239,68,68,0.3); }
+      50%       { box-shadow: 0 0 40px rgba(239,68,68,0.6); }
+    }
+
+    .animate-float-in          { animation: floatIn  0.8s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+    .animate-slide-up-delay    { animation: slideUp  0.8s ease-out 0.3s both; }
+    .animate-slide-up-delay-2  { animation: slideUp  0.8s ease-out 0.6s both; }
+    .animate-fade-in           { animation: fadeIn   0.6s ease-out both; }
+    .animate-bounce-in         { animation: bounceIn 0.8s ease-out both; }
+    .animate-glow-pulse        { animation: glowPulse 2s ease-in-out infinite; }
+
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+
+    /* Gradient-x background size for animation */
+    .animate-gradient-x { background-size: 200% 200%; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(45deg, #ef4444, #22c55e); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: linear-gradient(45deg, #dc2626, #16a34a); }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-red-50 via-green-50 to-amber-50 min-h-screen font-body">
+
+  <!-- ───────────── Modern Sticky Header ───────────── -->
+  <header class="sticky top-0 z-50 glass-effect shadow-2xl border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-6">
+
+        <!-- Logo -->
+        <div class="flex items-center space-x-4 group cursor-pointer">
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-red-500 via-green-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-glow-red group-hover:shadow-glow-green transition-all duration-500 transform group-hover:scale-110">
+              <span class="text-white font-bold text-2xl animate-bounce-slow">🍲</span>
+            </div>
+            <div class="absolute -top-1 -right-1 w-4 h-4 bg-amber-400 rounded-full animate-ping"></div>
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold gradient-text font-display tracking-tight">Jaya's Organic</h1>
+            <p class="text-sm text-neutral-600 font-medium">Authentic Tamil Flavors</p>
+          </div>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#recipes"  class="relative text-lg font-semibold text-neutral-700 hover:text-red-600 transition-all duration-300 group"><span class="relative z-10">Recipes</span><div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-500 to-green-500 group-hover:w-full transition-all duration-300"></div></a>
+          <a href="#products" class="relative text-lg font-semibold text-neutral-700 hover:text-green-600 transition-all duration-300 group"><span class="relative z-10">Products</span><div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-amber-500 group-hover:w-full transition-all duration-300"></div></a>
+          <a href="#about"    class="relative text-lg font-semibold text-neutral-700 hover:text-amber-600 transition-all duration-300 group"><span class="relative z-10">About</span><div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-red-500 group-hover:w-full transition-all duration-300"></div></a>
+          <a href="#blog"     class="relative text-lg font-semibold text-neutral-700 hover:text-red-600 transition-all duration-300 group"><span class="relative z-10">Blog</span><div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-500 to-green-500 group-hover:w-full transition-all duration-300"></div></a>
+          <a href="#feedback" class="relative text-lg font-semibold text-neutral-700 hover:text-green-600 transition-all duration-300 group"><span class="relative z-10">Reviews</span><div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-amber-500 group-hover:w-full transition-all duration-300"></div></a>
+          <a href="#contact"  class="relative text-lg font-semibold text-neutral-700 hover:text-amber-600 transition-all duration-300 group"><span class="relative z-10">Contact</span><div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-red-500 group-hover:w-full transition-all duration-300"></div></a>
+          <div class="h-8 w-px bg-gradient-to-b from-red-500 via-green-500 to-amber-500"></div>
+          <button id="profile-btn" onclick="handleProfileClick()" class="relative group">
+            <div class="p-3 bg-gradient-to-br from-amber-500 to-red-500 rounded-2xl text-white shadow-lg hover:shadow-glow-amber transition-all duration-300 transform hover:scale-110">
+              <span class="text-2xl">👤</span>
+            </div>
+          </button>
+          <button onclick="openCart()" class="relative group">
+            <div class="p-3 bg-gradient-to-br from-red-500 to-green-500 rounded-2xl text-white shadow-lg hover:shadow-glow-red transition-all duration-300 transform hover:scale-110">
+              <span class="text-2xl">🛒</span>
+            </div>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-amber-500 text-white text-sm rounded-full w-7 h-7 flex items-center justify-center font-bold shadow-lg hidden animate-bounce-in">0</span>
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="p-3 glass-effect rounded-2xl hover:bg-white/50 transition-all duration-300 transform hover:scale-105">
+            <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+              <div class="w-5 h-0.5 bg-neutral-700 transition-all duration-300"></div>
+              <div class="w-5 h-0.5 bg-neutral-700 transition-all duration-300"></div>
+              <div class="w-5 h-0.5 bg-neutral-700 transition-all duration-300"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden pb-6 border-t border-white/20 mt-4">
+        <div class="space-y-2 pt-4">
+          <a href="#recipes"  class="block py-3 px-4 text-lg font-semibold text-neutral-700 hover:bg-red-50 hover:text-red-600 rounded-xl transition-all duration-300">🍽️ Recipes</a>
+          <a href="#products" class="block py-3 px-4 text-lg font-semibold text-neutral-700 hover:bg-green-50 hover:text-green-600 rounded-xl transition-all duration-300">🛍️ Products</a>
+          <a href="#about"    class="block py-3 px-4 text-lg font-semibold text-neutral-700 hover:bg-amber-50 hover:text-amber-600 rounded-xl transition-all duration-300">📖 About</a>
+          <a href="#blog"     class="block py-3 px-4 text-lg font-semibold text-neutral-700 hover:bg-red-50 hover:text-red-600 rounded-xl transition-all duration-300">📝 Blog</a>
+          <a href="#feedback" class="block py-3 px-4 text-lg font-semibold text-neutral-700 hover:bg-green-50 hover:text-green-600 rounded-xl transition-all duration-300">⭐ Reviews</a>
+          <a href="#contact"  class="block py-3 px-4 text-lg font-semibold text-neutral-700 hover:bg-amber-50 hover:text-amber-600 rounded-xl transition-all duration-300">📞 Contact</a>
+          <div class="pt-2 space-y-2">
+            <button id="mobile-profile-btn" onclick="handleProfileClick()" class="flex items-center justify-between w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-red-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-glow-amber transition-all duration-300">
+              <span class="flex items-center gap-3"><span>👤</span><span id="mobile-profile-text">User Profile</span></span>
+            </button>
+            <button onclick="openCart()" class="flex items-center justify-between w-full py-3 px-4 bg-gradient-to-r from-red-500 to-green-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-glow-red transition-all duration-300">
+              <span class="flex items-center gap-3"><span>🛒</span><span>Shopping Cart</span></span>
+              <span id="cart-count-mobile" class="bg-white/20 text-white text-sm rounded-full px-3 py-1 font-bold hidden">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ───────────── Hero Section ───────────── -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- FIX 2: animate-gradient-x now works with defined keyframe + background-size -->
+    <div class="absolute inset-0 bg-gradient-to-br from-red-400 via-green-400 to-amber-400 animate-gradient-x" style="background-size:200% 200%;"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(255,255,255,0.1),transparent)]"></div>
+
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full floating-element animate-float"></div>
+    <div class="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full floating-element animate-float" style="animation-delay:2s;"></div>
+    <div class="absolute bottom-32 left-20 w-24 h-24 bg-white/10 rounded-full floating-element animate-float" style="animation-delay:4s;"></div>
+    <!-- FIX 4: w-18 → w-16 (valid Tailwind class) -->
+    <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/10 rounded-full floating-element animate-float" style="animation-delay:1s;"></div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="animate-float-in">
+        <div class="inline-block mb-8">
+          <span class="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-white font-semibold text-sm border border-white/30 animate-glow-pulse">
+            🌟 Premium Organic Tamil Cuisine
+          </span>
+        </div>
+        <h2 class="text-6xl md:text-8xl font-black font-display mb-8 leading-tight">
+          <span class="block text-white text-shadow">Authentic</span>
+          <span class="block gradient-text">Tamil Homemade</span>
+          <span class="block text-white text-shadow">Food</span>
+        </h2>
+        <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-white/90 font-medium leading-relaxed animate-slide-up-delay">
+          Experience the rich flavors of traditional Tamil Nadu cuisine, crafted with love using only the finest organic ingredients.
+          <span class="block mt-2 text-amber-200 font-semibold">Fresh • Authentic • Delivered Daily</span>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up-delay-2">
+          <a href="#products" class="group relative overflow-hidden bg-white text-red-600 px-12 py-5 rounded-3xl font-bold text-xl shadow-2xl hover:shadow-glow-red transition-all duration-500 transform hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span class="relative z-10 flex items-center gap-3"><span>🛍️</span><span>Shop Now</span><span class="transform group-hover:translate-x-1 transition-transform">→</span></span>
+          </a>
+          <a href="#recipes" class="group border-2 border-white/50 text-white px-12 py-5 rounded-3xl font-bold text-xl hover:bg-white/20 hover:border-white backdrop-blur-sm transition-all duration-500 transform hover:scale-105">
+            <span class="flex items-center gap-3"><span>🍽️</span><span>Explore Recipes</span><span class="transform group-hover:translate-x-1 transition-transform">→</span></span>
+          </a>
+        </div>
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto animate-fade-in" style="animation-delay:1s;">
+          <div class="text-center"><div class="text-4xl font-black text-white mb-2">500+</div><div class="text-white/80 font-medium">Happy Customers</div></div>
+          <div class="text-center"><div class="text-4xl font-black text-white mb-2">15+</div><div class="text-white/80 font-medium">Traditional Recipes</div></div>
+          <div class="text-center"><div class="text-4xl font-black text-white mb-2">100%</div><div class="text-white/80 font-medium">Organic</div></div>
+          <div class="text-center"><div class="text-4xl font-black text-white mb-2">24/7</div><div class="text-white/80 font-medium">Fresh Delivery</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Trust & Social Proof ───────────── -->
+  <section class="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Trusted by 500+ Happy Customers</h2>
+        <p class="text-xl text-gray-600">Real reviews from real customers who love our authentic Tamil homemade food</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" alt="Priya S." class="w-12 h-12 rounded-full mr-4">
+            <div><h4 class="font-semibold text-gray-900">Priya S.</h4><div class="flex text-yellow-400">★★★★★</div></div>
+          </div>
+          <p class="text-gray-600 mb-3">"The Pirandai Thokku is absolutely authentic and delicious! Reminds me of my grandmother's cooking."</p>
+          <span class="text-sm text-gray-500">T. Nagar, Chennai</span>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Rajesh K." class="w-12 h-12 rounded-full mr-4">
+            <div><h4 class="font-semibold text-gray-900">Rajesh K.</h4><div class="flex text-yellow-400">★★★★★</div></div>
+          </div>
+          <p class="text-gray-600 mb-3">"Amazing Idli Podi! The spice level is perfect and it goes great with hot idlis."</p>
+          <span class="text-sm text-gray-500">Adyar, Chennai</span>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Lakshmi M." class="w-12 h-12 rounded-full mr-4">
+            <div><h4 class="font-semibold text-gray-900">Lakshmi M.</h4><div class="flex text-yellow-400">★★★★★</div></div>
+          </div>
+          <p class="text-gray-600 mb-3">"The Vallarai Podi is not only tasty but also healthy. My kids love it!"</p>
+          <span class="text-sm text-gray-500">Velachery, Chennai</span>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="https://www.google.com/search?q=jaya%27s+organic+chennai+reviews" target="_blank" class="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-2xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <span class="mr-3">📍</span>Read All Google Reviews<span class="ml-3">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Making Process ───────────── -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Our Traditional Making Process</h2>
+        <p class="text-xl text-gray-600">From farm to table - see how we preserve authentic Tamil flavors</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center"><div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-3xl">🌱</span></div><h3 class="text-xl font-semibold mb-2">Fresh Harvest</h3><p class="text-gray-600">Organic ingredients sourced directly from local Tamil Nadu farms</p></div>
+        <div class="text-center"><div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-3xl">👩‍🍳</span></div><h3 class="text-xl font-semibold mb-2">Traditional Methods</h3><p class="text-gray-600">Prepared using age-old Tamil recipes passed down through generations</p></div>
+        <div class="text-center"><div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-3xl">🔥</span></div><h3 class="text-xl font-semibold mb-2">Slow Cooking</h3><p class="text-gray-600">Slow-cooked to perfection without preservatives or artificial additives</p></div>
+        <div class="text-center"><div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-3xl">📦</span></div><h3 class="text-xl font-semibold mb-2">Fresh Packaging</h3><p class="text-gray-600">Packaged fresh and delivered within 24 hours of preparation</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Recipes Section ───────────── -->
+  <section id="recipes" class="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-10 left-10 w-32 h-32 border-2 border-red-500 rounded-full"></div>
+      <div class="absolute top-20 right-20 w-24 h-24 border-2 border-green-500 rounded-full"></div>
+      <div class="absolute bottom-20 left-1/4 w-20 h-20 border-2 border-amber-500 rounded-full"></div>
+    </div>
+    <div class="relative z-10">
+      <div class="text-center mb-20">
+        <div class="inline-block mb-6"><span class="px-6 py-3 bg-gradient-to-r from-red-100 to-green-100 text-red-700 font-semibold rounded-full border border-red-200">🍽️ Culinary Heritage</span></div>
+        <h3 class="text-5xl md:text-6xl font-black font-display mb-8 gradient-text">Traditional Recipes</h3>
+        <p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">Discover the authentic flavors of Tamil Nadu through our carefully preserved recipes, each telling a story of tradition, culture, and culinary excellence.</p>
+      </div>
+      <!-- Search & Filters -->
+      <div class="flex flex-col lg:flex-row gap-8 mb-16 max-w-5xl mx-auto">
+        <div class="flex-1 relative">
+          <input type="text" id="recipe-search" placeholder="🔍 Search recipes by name or ingredient..." class="w-full px-8 py-5 border-2 border-neutral-200 rounded-3xl text-lg focus:border-red-500 focus:outline-none transition-all shadow-lg hover:shadow-xl bg-white/80 backdrop-blur-sm">
+          <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-neutral-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+        </div>
+        <button onclick="applyFilters()" class="px-10 py-5 bg-gradient-to-r from-red-500 via-green-500 to-amber-500 text-white font-bold text-lg rounded-3xl shadow-xl hover:shadow-glow-red transition-all duration-500 transform hover:scale-105 hover:rotate-1">🔍 Discover</button>
+      </div>
+      <!-- Category Filters -->
+      <div id="category-filters" class="flex flex-wrap gap-4 mb-16 justify-center">
+        <button class="filter-chip px-8 py-4 bg-white border-2 border-neutral-200 rounded-2xl font-semibold text-neutral-700 hover:border-red-500 hover:bg-red-50 transition-all shadow-lg hover:shadow-xl active:scale-95 transform hover:-translate-y-1" data-category="all" onclick="filterByCategory('all')">✨ All Recipes</button>
+      </div>
+      <!-- Recipe Grid -->
+      <div id="recipe-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- ───────────── Recipe Detail Modal ───────────── -->
+  <div id="recipe-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden animate-fade-in">
+    <div class="relative w-full h-full overflow-y-auto">
+      <button id="close-modal" class="fixed top-8 right-8 w-16 h-16 bg-white rounded-3xl shadow-2xl flex items-center justify-center text-3xl font-bold text-red-600 hover:scale-110 hover:shadow-glow-red transition-all duration-300 z-50">×</button>
+      <div class="min-h-full flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl animate-slide-up-modal w-full max-w-6xl">
+          <div id="modal-content" class="p-12"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────── Shopping Cart Modal ───────────── -->
+  <div id="cart-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden animate-fade-in">
+    <div class="relative w-full h-full overflow-y-auto">
+      <button onclick="closeCart()" class="fixed top-8 right-8 w-16 h-16 bg-white rounded-3xl shadow-2xl flex items-center justify-center text-3xl font-bold text-red-600 hover:scale-110 hover:shadow-glow-red transition-all duration-300 z-50">×</button>
+      <div class="min-h-full flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl animate-slide-up-modal w-full max-w-2xl">
+          <div class="p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">🛒 Your Shopping Cart</h2>
+            <div id="cart-items" class="space-y-4 mb-6 max-h-96 overflow-y-auto"></div>
+            <div class="border-t pt-6">
+              <div class="mb-6 p-4 bg-blue-50 rounded-2xl border-2 border-blue-200">
+                <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">🚚 Delivery Information</h3>
+                <div class="space-y-2 text-sm text-blue-700">
+                  <p><strong>Delivery Areas:</strong> Chennai, Tambaram, Velachery, Adyar, T.Nagar</p>
+                  <p><strong>Delivery Charges:</strong> ₹50 for orders under ₹500, Free delivery above ₹500</p>
+                  <p><strong>Delivery Time:</strong> 1-2 hours within Chennai, 2-4 hours for suburbs</p>
+                  <p><strong>Process:</strong> Order → Confirmation → Preparation → Delivery → Payment on delivery</p>
+                </div>
+              </div>
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-2xl font-bold text-gray-900">Total:</span>
+                <span id="cart-total" class="text-3xl font-bold text-green-600">₹0</span>
+              </div>
+              <button onclick="checkoutCart()" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 px-8 rounded-2xl font-semibold text-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-500">📱 Order on WhatsApp</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────── Auth Modal ───────────── -->
+  <div id="auth-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden animate-fade-in">
+    <div class="relative w-full h-full overflow-y-auto">
+      <button onclick="closeAuthModal()" class="fixed top-8 right-8 w-16 h-16 bg-white rounded-3xl shadow-2xl flex items-center justify-center text-3xl font-bold text-red-600 hover:scale-110 hover:shadow-glow-red transition-all duration-300 z-50">×</button>
+      <div class="min-h-full flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl animate-slide-up-modal w-full max-w-md">
+          <div class="p-8">
+            <!-- Login -->
+            <div id="login-form" class="space-y-6">
+              <div class="text-center"><h2 class="text-3xl font-bold text-gray-900 mb-2">Welcome Back! 👋</h2><p class="text-gray-600">Sign in to your account</p></div>
+              <form id="login-form-element" class="space-y-4">
+                <div><label class="block text-sm font-medium text-gray-700 mb-2">Email</label><input type="email" name="email" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"></div>
+                <div><label class="block text-sm font-medium text-gray-700 mb-2">Password</label><input type="password" name="password" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"></div>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-4 rounded-xl font-semibold hover:shadow-lg transition-all">Sign In</button>
+              </form>
+              <div class="text-center"><p class="text-gray-600">Don't have an account? <button onclick="showSignupForm()" class="text-blue-600 font-semibold hover:underline">Sign Up</button></p></div>
+            </div>
+            <!-- Signup -->
+            <div id="signup-form" class="space-y-6 hidden">
+              <div class="text-center"><h2 class="text-3xl font-bold text-gray-900 mb-2">Join Jaya's Organic! 🌱</h2><p class="text-gray-600">Create your account</p></div>
+              <form id="signup-form-element" class="space-y-4">
+                <div><label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label><input type="text" name="name" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none transition-colors"></div>
+                <div><label class="block text-sm font-medium text-gray-700 mb-2">Email</label><input type="email" name="email" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none transition-colors"></div>
+                <div><label class="block text-sm font-medium text-gray-700 mb-2">Phone</label><input type="tel" name="phone" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none transition-colors"></div>
+                <div><label class="block text-sm font-medium text-gray-700 mb-2">Password</label><input type="password" name="password" required minlength="6" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none transition-colors"></div>
+                <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-4 rounded-xl font-semibold hover:shadow-lg transition-all">Create Account</button>
+              </form>
+              <div class="text-center"><p class="text-gray-600">Already have an account? <button onclick="showLoginForm()" class="text-green-600 font-semibold hover:underline">Sign In</button></p></div>
+            </div>
+            <!-- Social Login -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <p class="text-center text-gray-600 mb-4">Or continue with</p>
+              <div class="grid grid-cols-2 gap-3">
+                <button onclick="socialLogin('google')" class="flex items-center justify-center gap-2 w-full py-3 px-4 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"><span class="text-xl">🌐</span><span class="text-sm font-medium">Google</span></button>
+                <button onclick="socialLogin('facebook')" class="flex items-center justify-center gap-2 w-full py-3 px-4 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"><span class="text-xl">📘</span><span class="text-sm font-medium">Facebook</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────── Review Modal ───────────── -->
+  <div id="review-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden animate-fade-in">
+    <div class="relative w-full h-full overflow-y-auto">
+      <button onclick="closeReviewModal()" class="fixed top-8 right-8 w-16 h-16 bg-white rounded-3xl shadow-2xl flex items-center justify-center text-3xl font-bold text-red-600 hover:scale-110 hover:shadow-glow-red transition-all duration-300 z-50">×</button>
+      <div class="min-h-full flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl animate-slide-up-modal w-full max-w-2xl">
+          <div class="p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">⭐ Write a Review</h2>
+            <form id="review-form" class="space-y-6">
+              <div><label class="block text-lg font-semibold text-gray-900 mb-3">Select Product</label><select id="review-product-select" name="product" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-lg focus:border-blue-500 focus:outline-none transition-colors"><option value="">Choose a product you've purchased...</option></select></div>
+              <div><label class="block text-lg font-semibold text-gray-900 mb-3">Review Title</label><input type="text" name="reviewTitle" placeholder="Summarize your experience in a few words" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-lg focus:border-blue-500 focus:outline-none transition-colors" maxlength="100" required></div>
+              <div>
+                <label class="block text-lg font-semibold text-gray-900 mb-3">Your Rating</label>
+                <div class="flex gap-2">
+                  <div id="star-rating" class="flex gap-1">
+                    <button type="button" onclick="setRating(1)" class="text-4xl hover:scale-110 transition-transform">☆</button>
+                    <button type="button" onclick="setRating(2)" class="text-4xl hover:scale-110 transition-transform">☆</button>
+                    <button type="button" onclick="setRating(3)" class="text-4xl hover:scale-110 transition-transform">☆</button>
+                    <button type="button" onclick="setRating(4)" class="text-4xl hover:scale-110 transition-transform">☆</button>
+                    <button type="button" onclick="setRating(5)" class="text-4xl hover:scale-110 transition-transform">☆</button>
+                  </div>
+                  <span id="rating-text" class="ml-4 text-lg text-gray-600">Click stars to rate</span>
+                </div>
+                <input type="hidden" id="rating-value" name="rating" value="0" required>
+              </div>
+              <div><label class="block text-lg font-semibold text-gray-900 mb-3">What did you like? (Pros)</label><textarea name="pros" rows="3" placeholder="Share the positive aspects..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-lg focus:border-green-500 focus:outline-none transition-colors resize-vertical"></textarea></div>
+              <div><label class="block text-lg font-semibold text-gray-900 mb-3">What could be improved? (Cons)</label><textarea name="cons" rows="3" placeholder="Share any areas for improvement..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-lg focus:border-red-500 focus:outline-none transition-colors resize-vertical"></textarea></div>
+              <div><label class="block text-lg font-semibold text-gray-900 mb-3">Detailed Review</label><textarea name="reviewText" rows="5" placeholder="Share your complete experience with this product..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-lg focus:border-blue-500 focus:outline-none transition-colors resize-vertical" required></textarea></div>
+              <div>
+                <label class="block text-lg font-semibold text-gray-900 mb-3">Add Photos (Optional)</label>
+                <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-blue-400 transition-colors">
+                  <input type="file" id="review-photos" name="photos" accept="image/*" multiple class="hidden">
+                  <label for="review-photos" class="cursor-pointer"><div class="text-4xl mb-2">📸</div><p class="text-gray-600">Click to add photos of the product or your experience</p><p class="text-sm text-gray-500 mt-1">Max 3 photos, 5MB each</p></label>
+                  <div id="photo-preview" class="mt-4 flex gap-2 justify-center flex-wrap"></div>
+                </div>
+              </div>
+              <div class="flex gap-4 pt-4">
+                <button type="submit" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 px-8 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-500">📝 Submit Review</button>
+                <button type="button" onclick="closeReviewModal()" class="px-8 py-4 border-2 border-gray-300 rounded-2xl font-semibold text-lg hover:bg-gray-50 transition-colors">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────── User Profile Modal ───────────── -->
+  <div id="profile-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden animate-fade-in">
+    <div class="relative w-full h-full overflow-y-auto">
+      <button onclick="closeProfile()" class="fixed top-8 right-8 w-16 h-16 bg-white rounded-3xl shadow-2xl flex items-center justify-center text-3xl font-bold text-red-600 hover:scale-110 hover:shadow-glow-red transition-all duration-300 z-50">×</button>
+      <div class="min-h-full flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl animate-slide-up-modal w-full max-w-4xl">
+          <div class="p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">👤 User Profile</h2>
+            <!-- Profile Header -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-6 mb-6">
+              <div class="flex items-center gap-6">
+                <div class="relative">
+                  <img id="profile-photo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjE1IiBmaWxsPSIjOUNBM0FGIi8+CjxwYXRoIGQ9Ik0yMCA3NVEyMCA2MCAzMCA2MEMzMCA1NSA0MCA1NSA0MCA2MEM0MCA3NSA1MCA3NSA1MCA4MEM1MCA4NSA2MCA4NSA2MCA3NVoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+" alt="Profile Photo" class="w-24 h-24 rounded-full border-4 border-white shadow-lg">
+                  <button onclick="changeProfilePhoto()" class="absolute bottom-0 right-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm hover:bg-blue-600 transition-colors">📷</button>
+                </div>
+                <div class="flex-1">
+                  <h3 id="profile-name" class="text-2xl font-bold text-gray-900">Guest User</h3>
+                  <p id="profile-email" class="text-gray-600">Not logged in</p>
+                  <div class="flex items-center gap-4 mt-2">
+                    <span class="text-sm text-gray-500">⭐ Rating: <span id="user-rating">0.0</span></span>
+                    <span class="text-sm text-gray-500">📦 Orders: <span id="order-count">0</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div class="space-y-4">
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                  <!-- FIX 5: Corrupt emoji replaced with ⚙️ -->
+                  <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">⚙️ Account Settings</h4>
+                  <div class="space-y-3">
+                    <button onclick="editProfileInfo()" class="w-full text-left p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">✏️ Edit Profile Information</button>
+                    <button onclick="changePassword()" class="w-full text-left p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">🔒 Change Password</button>
+                    <button onclick="manageAddresses()" class="w-full text-left p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">📍 Manage Addresses</button>
+                    <button onclick="notificationSettings()" class="w-full text-left p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">🔔 Notification Settings</button>
+                  </div>
+                </div>
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                  <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">💳 Payment Methods</h4>
+                  <div id="payment-methods" class="space-y-3"><p class="text-gray-500 text-center py-4">No payment methods saved</p></div>
+                  <button onclick="addPaymentMethod()" class="w-full mt-3 bg-blue-500 text-white py-2 px-4 rounded-xl font-semibold hover:bg-blue-600 transition-colors">+ Add Payment Method</button>
+                </div>
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                  <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">🎁 Rewards & Loyalty</h4>
+                  <div class="space-y-3">
+                    <div class="flex justify-between items-center"><span>Loyalty Points:</span><span id="loyalty-points" class="font-bold text-green-600">0</span></div>
+                    <div class="flex justify-between items-center"><span>Member Level:</span><span id="member-level" class="font-bold text-blue-600">Bronze</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2"><div id="loyalty-progress" class="bg-green-500 h-2 rounded-full" style="width:0%"></div></div>
+                    <p class="text-sm text-gray-600">Earn 100 more points to reach Silver level!</p>
+                  </div>
+                </div>
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                  <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">📞 Customer Care</h4>
+                  <p class="text-gray-600 mb-4">Need help? Contact our support team</p>
+                  <div class="space-y-2">
+                    <a href="tel:+919600572691" class="flex items-center gap-3 w-full bg-green-500 text-white py-3 px-4 rounded-xl font-semibold hover:bg-green-600 transition-colors">📱 Call Support</a>
+                    <a href="https://wa.me/919600572691?text=Hi%20Jaya's%20Organic%20Support!" target="_blank" class="flex items-center gap-3 w-full bg-blue-500 text-white py-3 px-4 rounded-xl font-semibold hover:bg-blue-600 transition-colors">💬 WhatsApp Support</a>
+                  </div>
+                </div>
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                  <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">🎁 Refer & Earn</h4>
+                  <p class="text-gray-600 mb-4">Share with friends and earn rewards!</p>
+                  <div class="space-y-2">
+                    <p class="text-sm text-gray-500">Your referral code: <span id="referral-code" class="font-mono bg-gray-100 px-2 py-1 rounded">JAYA2026</span></p>
+                    <button onclick="shareReferral()" class="w-full bg-purple-500 text-white py-2 px-4 rounded-xl font-semibold hover:bg-purple-600 transition-colors">📤 Share Referral Code</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Right Column -->
+              <div class="space-y-4">
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                  <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">📋 Order History</h4>
+                  <div id="order-history" class="space-y-3 max-h-48 overflow-y-auto"><p class="text-gray-500 text-center py-4">No orders yet</p></div>
+                </div>
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                  <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">⭐ Rate Products</h4>
+                  <div class="mb-4"><button onclick="openReviewModal()" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-4 rounded-xl font-semibold hover:shadow-lg transition-all">✍️ Write a Review</button></div>
+                  <div id="rate-products" class="space-y-3"><p class="text-gray-500 text-center py-4">Rate products you've purchased</p></div>
+                </div>
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                  <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">📢 Newsletter Subscription</h4>
+                  <p class="text-gray-600 mb-4">Get updates on new recipes and products</p>
+                  <form id="profile-newsletter-form" class="flex gap-2">
+                    <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-xl text-gray-900 border-2 border-gray-200" required>
+                    <button type="submit" class="bg-amber-500 text-white px-4 py-2 rounded-xl font-semibold hover:bg-amber-600 transition-colors">Subscribe</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Subscription Plans -->
+            <div class="mt-8 bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-6 border-2 border-purple-200">
+              <h4 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">🔄 Subscription Plans</h4>
+              <p class="text-gray-600 mb-6">Get fresh organic products delivered regularly to your doorstep!</p>
+              <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white rounded-2xl p-4 border-2 border-gray-200 hover:border-green-400 transition-colors cursor-pointer" onclick="selectSubscription('weekly')">
+                  <h5 class="font-bold text-lg text-gray-900 mb-2">Weekly Box</h5><p class="text-2xl font-bold text-green-600 mb-2">₹1,200/month</p><p class="text-sm text-gray-600">Fresh products every week</p><div class="mt-3 text-xs text-gray-500">• 5-6 organic items<br>• Free delivery<br>• Cancel anytime</div>
+                </div>
+                <div class="bg-white rounded-2xl p-4 border-2 border-gray-200 hover:border-green-400 transition-colors cursor-pointer" onclick="selectSubscription('biweekly')">
+                  <h5 class="font-bold text-lg text-gray-900 mb-2">Bi-Weekly Box</h5><p class="text-2xl font-bold text-green-600 mb-2">₹650/month</p><p class="text-sm text-gray-600">Every two weeks</p><div class="mt-3 text-xs text-gray-500">• 3-4 organic items<br>• Free delivery<br>• Flexible schedule</div>
+                </div>
+                <div class="bg-white rounded-2xl p-4 border-2 border-gray-200 hover:border-green-400 transition-colors cursor-pointer" onclick="selectSubscription('monthly')">
+                  <h5 class="font-bold text-lg text-gray-900 mb-2">Monthly Special</h5><p class="text-2xl font-bold text-green-600 mb-2">₹2,500/month</p><p class="text-sm text-gray-600">Premium selection</p><div class="mt-3 text-xs text-gray-500">• 8-10 premium items<br>• Free delivery<br>• Exclusive recipes</div>
+                </div>
+              </div>
+              <div class="text-center"><button onclick="manageSubscription()" class="bg-gradient-to-r from-purple-500 to-pink-600 text-white py-3 px-8 rounded-2xl font-semibold hover:shadow-lg transition-all">📦 Manage My Subscription</button></div>
+            </div>
+            <!-- Action Buttons -->
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <button onclick="saveProfile()" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 px-8 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-500">💾 Save Profile</button>
+              <button onclick="logoutUser()" class="flex-1 bg-gradient-to-r from-red-500 to-pink-600 text-white py-4 px-8 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-500">🚪 Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────── Products Section ───────────── -->
+  <section id="products" class="py-32 bg-gradient-to-br from-red-50 via-green-50 to-amber-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-10">
+      <div class="absolute top-20 left-10 w-40 h-40 bg-red-300 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-60 h-60 bg-green-300 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-amber-300 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto text-center mb-20 relative z-10">
+      <div class="inline-block mb-6"><span class="px-6 py-3 bg-gradient-to-r from-green-100 to-amber-100 text-green-700 font-semibold rounded-full border border-green-200">🛍️ Ready-to-Eat Delights</span></div>
+      <h3 class="text-5xl md:text-6xl font-black font-display mb-8 gradient-text">Premium Products</h3>
+      <p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">Freshly made, preservative-free authentic Tamil food products. Order via WhatsApp for same-day delivery in Chennai with farm-fresh quality guaranteed.</p>
+    </div>
+    <!-- Pincode Checker -->
+    <div class="max-w-2xl mx-auto mb-16 relative z-10">
+      <div class="bg-white rounded-2xl p-6 shadow-lg">
+        <h4 class="text-xl font-semibold mb-4 text-center">📍 Check Delivery Availability</h4>
+        <div class="flex gap-4">
+          <input type="text" id="pincode-input" placeholder="Enter your PIN code" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none">
+          <button onclick="checkPincode()" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-colors">Check</button>
+        </div>
+        <p id="delivery-result" class="mt-3 text-sm text-gray-600"></p>
+        <p class="text-sm text-gray-500 mt-2">🚚 Expected Delivery: 3–5 working days | Free delivery above ₹500</p>
+      </div>
+    </div>
+    <!-- Special Offers -->
+    <div class="mb-16 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-2xl p-6 text-center"><div class="text-3xl mb-2">🎁</div><h4 class="text-xl font-bold mb-2">Combo Offer</h4><p class="mb-4">Any 3 Podis for ₹500</p><button onclick="addComboToCart()" class="bg-white text-red-600 px-6 py-2 rounded-xl font-semibold hover:bg-gray-100 transition-colors">Add to Cart</button></div>
+        <div class="bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-2xl p-6 text-center"><div class="text-3xl mb-2">🎉</div><h4 class="text-xl font-bold mb-2">Pongal Special Hamper</h4><p class="mb-4">Traditional gift box with 5 premium items</p><button onclick="addHamperToCart()" class="bg-white text-green-600 px-6 py-2 rounded-xl font-semibold hover:bg-gray-100 transition-colors">₹850 - Order Now</button></div>
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-2xl p-6 text-center"><div class="text-3xl mb-2">📦</div><h4 class="text-xl font-bold mb-2">Bulk Order Discount</h4><p class="mb-4">1kg+ orders get 15% off</p><button onclick="showBulkOptions()" class="bg-white text-amber-600 px-6 py-2 rounded-xl font-semibold hover:bg-gray-100 transition-colors">View Options</button></div>
+      </div>
+    </div>
+    <div class="relative z-10">
+      <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"></div>
+      <div class="text-center mt-16">
+        <div class="inline-block border-gradient p-1 rounded-3xl"><div class="bg-white px-8 py-4 rounded-3xl"><p class="text-lg text-neutral-700 font-medium">📱 <strong>Ready to order?</strong> WhatsApp us for instant delivery!</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Delivery Areas ───────────── -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12"><h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Delivery Areas</h2><p class="text-xl text-gray-600">We deliver fresh organic products across Chennai and suburbs</p></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-6 shadow-lg"><h3 class="text-xl font-semibold mb-4 text-green-600">✅ Same Day Delivery</h3><ul class="space-y-2 text-gray-600"><li>✓ T. Nagar</li><li>✓ Adyar</li><li>✓ Velachery</li><li>✓ Anna Nagar</li><li>✓ Mylapore</li></ul></div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg"><h3 class="text-xl font-semibold mb-4 text-blue-600">🚚 Next Day Delivery</h3><ul class="space-y-2 text-gray-600"><li>✓ Tambaram</li><li>✓ Porur</li><li>✓ Nungambakkam</li><li>✓ Saidapet</li><li>✓ Royapettah</li></ul></div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg"><h3 class="text-xl font-semibold mb-4 text-amber-600">📞 Call for Other Areas</h3><p class="text-gray-600 mb-4">We can arrange delivery to other parts of Chennai and nearby areas.</p><a href="tel:+919600572691" class="inline-block bg-amber-600 text-white px-6 py-2 rounded-xl font-semibold hover:bg-amber-700 transition-colors">Call Now</a></div>
+      </div>
+      <div class="text-center mt-12">
+        <div class="bg-white rounded-2xl p-6 shadow-lg max-w-2xl mx-auto">
+          <h3 class="text-xl font-semibold mb-4">Delivery Information</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div><span class="font-semibold text-green-600">Free Delivery:</span><br>Orders above ₹500</div>
+            <div><span class="font-semibold text-blue-600">Delivery Charge:</span><br>₹50 for orders under ₹500</div>
+            <div><span class="font-semibold text-amber-600">Delivery Time:</span><br>1-2 hours (same day)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Feedback Section ───────────── -->
+  <section id="feedback" class="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-b from-white via-red-50/30 to-green-50/30 relative">
+    <div class="absolute inset-0 opacity-5">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="#ef4444"/><circle cx="5" cy="15" r="0.5" fill="#22c55e"/><circle cx="15" cy="5" r="0.5" fill="#f59e0b"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#stars)"/>
+      </svg>
+    </div>
+    <div class="relative z-10 text-center mb-20">
+      <div class="inline-block mb-6"><span class="px-6 py-3 bg-gradient-to-r from-amber-100 to-red-100 text-amber-700 font-semibold rounded-full border border-amber-200">⭐ Customer Love</span></div>
+      <h3 class="text-5xl md:text-6xl font-black font-display mb-8 gradient-text">What Our Customers Say</h3>
+      <p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">Don't just take our word for it. Hear from our community of food lovers who have experienced the authentic taste of traditional Tamil cuisine.</p>
+    </div>
+    <div id="feedback-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"></div>
+    <div class="text-center mt-20 relative z-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div class="glass-effect p-6 rounded-3xl border border-white/20"><div class="text-3xl font-black text-red-600 mb-2">4.9★</div><div class="text-sm text-neutral-600 font-medium">Average Rating</div></div>
+        <div class="glass-effect p-6 rounded-3xl border border-white/20"><div class="text-3xl font-black text-green-600 mb-2">500+</div><div class="text-sm text-neutral-600 font-medium">Happy Customers</div></div>
+        <div class="glass-effect p-6 rounded-3xl border border-white/20"><div class="text-3xl font-black text-amber-600 mb-2">24/7</div><div class="text-sm text-neutral-600 font-medium">Customer Support</div></div>
+        <div class="glass-effect p-6 rounded-3xl border border-white/20"><div class="text-3xl font-black text-red-600 mb-2">100%</div><div class="text-sm text-neutral-600 font-medium">Organic</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── About ───────────── -->
+  <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <h3 class="text-4xl md:text-5xl font-bold font-tamil mb-6 bg-gradient-to-r from-amber-600 to-emerald-500 bg-clip-text text-transparent">About Jaya's Organic</h3>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Bringing authentic Tamil flavors from traditional kitchens to your home.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h4 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h4>
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">Founded in 2020, Jaya's Organic started as a small family business in Chennai with a simple mission: to preserve and share authentic Tamil recipes using only the finest organic ingredients. What began as homemade pickles for family and friends has grown into a beloved brand serving customers across Chennai.</p>
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">Every product is made with love in our kitchen using traditional methods passed down through generations. We source our ingredients directly from local organic farms, ensuring freshness and quality in every bite.</p>
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">Our journey began when our founder, Jaya, discovered the healing power of traditional Tamil herbs while caring for her family. What started as simple home remedies evolved into a passion for creating authentic, preservative-free food products that not only taste incredible but also support health and wellness.</p>
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">Today, we continue to innovate while staying true to our roots. From our signature Pirandai Thokku to our unique herbal podis, each product tells a story of tradition, quality, and the love we put into every batch.</p>
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="text-center"><div class="text-4xl font-bold text-amber-600 mb-2">500+</div><div class="text-gray-600">Happy Customers</div></div>
+          <div class="text-center"><div class="text-4xl font-bold text-emerald-600 mb-2">15+</div><div class="text-gray-600">Traditional Recipes</div></div>
+          <div class="text-center"><div class="text-4xl font-bold text-red-600 mb-2">3</div><div class="text-gray-600">Years of Excellence</div></div>
+          <div class="text-center"><div class="text-4xl font-bold text-green-600 mb-2">100%</div><div class="text-gray-600">Organic Ingredients</div></div>
+        </div>
+      </div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Traditional Tamil Kitchen" class="w-full rounded-3xl shadow-2xl">
+        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-emerald-500 rounded-2xl flex items-center justify-center"><span class="text-white font-bold">🍲</span></div>
+            <div><div class="font-bold text-gray-900">100% Organic</div><div class="text-sm text-gray-600">Farm Fresh Ingredients</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── Blog ───────────── -->
+  <section id="blog" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-b from-amber-50 to-white">
+    <div class="text-center mb-20">
+      <h3 class="text-4xl md:text-5xl font-bold font-tamil mb-6 bg-gradient-to-r from-emerald-500 to-amber-600 bg-clip-text text-transparent">Food Stories & Tips</h3>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Discover the stories behind our recipes and learn cooking tips from our kitchen.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-3xl overflow-hidden shadow-xl"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop" alt="Cooking Tips" class="w-full h-48 object-cover"><div class="p-8"><div class="text-sm text-amber-600 font-semibold mb-3">COOKING TIPS</div><h4 class="text-2xl font-bold text-gray-900 mb-4">Essential Spices for Tamil Cooking</h4><p class="text-gray-600 mb-6">Learn about the key spices that make Tamil cuisine unique and flavorful.</p><a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a></div></div>
+      <div class="bg-white rounded-3xl overflow-hidden shadow-xl"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop" alt="Health Benefits" class="w-full h-48 object-cover"><div class="p-8"><div class="text-sm text-emerald-600 font-semibold mb-3">HEALTH & NUTRITION</div><h4 class="text-2xl font-bold text-gray-900 mb-4">Benefits of Traditional Tamil Foods</h4><p class="text-gray-600 mb-6">Discover how our traditional recipes support health and wellness.</p><a href="#" class="text-emerald-600 font-semibold hover:text-emerald-700">Read More →</a></div></div>
+      <div class="bg-white rounded-3xl overflow-hidden shadow-xl"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=300&fit=crop" alt="Recipe Stories" class="w-full h-48 object-cover"><div class="p-8"><div class="text-sm text-amber-600 font-semibold mb-3">RECIPE STORIES</div><h4 class="text-2xl font-bold text-gray-900 mb-4">The History of Sambar</h4><p class="text-gray-600 mb-6">Explore the origins and evolution of this beloved South Indian dish.</p><a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a></div></div>
+    </div>
+  </section>
+
+  <!-- ───────────── Contact ───────────── -->
+  <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="bg-white rounded-3xl shadow-2xl p-12 text-center">
+      <h3 class="text-4xl md:text-5xl font-bold font-tamil mb-6 bg-gradient-to-r from-amber-600 to-emerald-500 bg-clip-text text-transparent">Get in Touch</h3>
+      <p class="text-xl text-gray-600 mb-12">Have questions or ready to place a bulk order? We'd love to hear from you!</p>
+      <form id="contact-form" class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div><input type="text" name="name" placeholder="Your Name" class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl text-lg focus:border-amber-500 focus:outline-none transition-all shadow-lg hover:shadow-xl" required></div>
+        <div><input type="email" name="email" placeholder="Your Email" class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl text-lg focus:border-amber-500 focus:outline-none transition-all shadow-lg hover:shadow-xl" required></div>
+        <div><input type="tel" name="phone" placeholder="Phone Number" class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl text-lg focus:border-amber-500 focus:outline-none transition-all shadow-lg hover:shadow-xl" required></div>
+        <div class="md:col-span-2"><textarea name="message" rows="5" placeholder="Your Message" class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl text-lg focus:border-amber-500 focus:outline-none transition-all resize-vertical shadow-lg hover:shadow-xl"></textarea></div>
+        <div class="md:col-span-2"><button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-emerald-500 text-white px-10 py-6 rounded-2xl font-semibold text-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-500">Send Message</button></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ───────────── Footer ───────────── -->
+  <footer class="bg-gradient-to-r from-amber-700 to-emerald-500 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h4 class="text-2xl font-bold mb-4">Jaya's Organic</h4>
+          <p class="text-amber-100 mb-4">Authentic Tamil homemade food made with love and organic ingredients.</p>
+          <div class="flex space-x-4 mb-4">
+            <a href="https://wa.me/919600572691?text=Hi%20Jaya's%20Organic!" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-2xl flex items-center justify-center text-xl transition-all duration-300 hover:scale-110">📱</a>
+            <a href="mailto:lokesh967755@gmail.com" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-2xl flex items-center justify-center text-xl transition-all duration-300 hover:scale-110">✉️</a>
+            <a href="https://maps.app.goo.gl/5TdKRkM8AtprjDK49" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-2xl flex items-center justify-center text-xl transition-all duration-300 hover:scale-110">📍</a>
+          </div>
+          <p class="text-sm text-amber-200">Email: lokesh967755@gmail.com</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#recipes"  class="text-amber-100 hover:text-white transition-colors">Recipes</a></li>
+            <li><a href="#products" class="text-amber-100 hover:text-white transition-colors">Products</a></li>
+            <li><a href="#about"    class="text-amber-100 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#blog"     class="text-amber-100 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#contact"  class="text-amber-100 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-4">Newsletter</h4>
+          <p class="text-amber-100 mb-4">Get updates on new recipes and products!</p>
+          <form id="newsletter-form" class="flex gap-2">
+            <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-xl text-gray-900" required>
+            <button type="submit" class="bg-white text-amber-700 px-4 py-2 rounded-xl font-semibold hover:bg-amber-100 transition-colors">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-white/20 pt-8 text-center">
+        <p class="text-lg opacity-90">&copy; 2026 Jaya's Organic. Made with <span class="text-2xl">❤️</span> in Chennai.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Order Buttons -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+    <a href="https://wa.me/919600572691?text=Hi%20Jaya's%20Organic!%20I%20want%20to%20order%20some%20products." target="_blank" class="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-110 animate-bounce">
+      <span class="text-2xl">💬</span>
+    </a>
+    <button onclick="openCart()" class="relative bg-red-600 text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-110">
+      <span class="text-2xl">🛒</span>
+      <span id="sticky-cart-count" class="absolute -top-2 -right-2 bg-white text-red-600 text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold hidden">0</span>
+    </button>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div id="order-confirmation-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden animate-fade-in">
+    <div class="relative w-full h-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl animate-slide-up-modal w-full max-w-md">
+          <div class="p-8 text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"><span class="text-4xl">✅</span></div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Order Confirmed!</h2>
+            <p class="text-gray-600 mb-6">Your order has been placed successfully.</p>
+            <div class="bg-gray-50 rounded-xl p-4 mb-6 text-left">
+              <p class="font-semibold">Order ID: <span id="order-id" class="text-blue-600">#JO2026-001</span></p>
+              <p class="text-sm text-gray-600 mt-2">Expected Delivery: 3-5 working days</p>
+            </div>
+            <button onclick="closeOrderConfirmation()" class="w-full bg-green-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-green-700 transition-colors">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- FIX 6: Google Analytics removed (placeholder GA_MEASUREMENT_ID — add real ID when ready) -->
+  <!-- To enable: replace GA_MEASUREMENT_ID below with your actual Measurement ID -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  -->
+
+  <script src="script.js"></script>
+</body>
+</html>
